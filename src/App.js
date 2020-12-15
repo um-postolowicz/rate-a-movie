@@ -16,14 +16,16 @@ function App() {
           throw new Error(`Http error: ${response.status}`);
         }
       })
-      .then((response) => setMovies(response))
+      .then((response) => setMovies(response.Search))
       .catch((error) => console.log(`Błąd: ${error}`));
   }, []);
 
   return (
-    <div className="App">
-      <h1>Hey</h1>
-    </div>
+    <>
+      <h1 className="app-title">Find your Movie</h1>
+      <input className="search" type="text" />
+      <ul className="movies-list"></ul>
+    </>
   );
 }
 
