@@ -1,14 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Header = ({ handleSearch, isSearched }) => {
-  const [inputValue, setInputValue] = useState("");
-
-  const handleInputClear = () => {
-    if (isSearched) {
-      setInputValue("");
-    }
-  };
-
+const Header = () => {
   return (
     <header className="header-container">
       <h1 className="app-title">Rate your Movie</h1>
@@ -18,18 +10,6 @@ const Header = ({ handleSearch, isSearched }) => {
         others from that nightmare? You are in the right place! Find a movie by
         typing it's title below and feel free to rate it!
       </p>
-      <form className="search-form" onSubmit={handleSearch}>
-        <input
-          className="search-input"
-          onChange={handleInputClear}
-          placeholder="Find a movie"
-          type="text"
-          value={inputValue}
-        />
-        <button className="search-btn" type="submit">
-          Search
-        </button>
-      </form>
     </header>
   );
 };
