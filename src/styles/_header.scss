@@ -1,0 +1,38 @@
+.header {
+  position: relative;
+  height: 100vh;
+  background-image: url("../images/header-img-640x400.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  &__color-opacity {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+  }
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  &__title {
+    font-family: "Bungee Outline", cursive;
+    font-size: 5rem;
+    line-height: 1;
+    text-shadow: 0px 0px 10px #ddd;
+  }
+  &__desc {
+    width: 80%;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+  }
+}

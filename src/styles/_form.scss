@@ -1,0 +1,33 @@
+.search {
+  position: absolute;
+  height: 25vh;
+  width: 100%;
+  top: 70vh;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__input {
+    height: 4.2rem;
+    width: 55%;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid #fccb90;
+    &::placeholder {
+      padding-left: 10px;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &__btn {
+    height: 4.2rem;
+    width: 25%;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+}

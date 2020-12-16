@@ -11,6 +11,8 @@
 # production
 /build
 
+/favicon_io.zip
+
 # misc
 .DS_Store
 .env.local
@@ -23,3 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 
 api key.txt
+theory.txt

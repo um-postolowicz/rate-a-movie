@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./styles/style.css";
 import Header from "./components/Header";
 import Movie from "./components/Movie";
 
 const API_KEY = "2fc6065a";
 const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
-
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -28,21 +27,21 @@ function App() {
       })
       .then((response) => setMovies(response.Search))
       .catch((error) => console.log(`Błąd: ${error}`));
-      setInputValue("");
+    setInputValue("");
   };
 
   return (
     <>
       <Header />
-      <form className="search-form" onSubmit={handleSearch}>
+      <form className="search" onSubmit={handleSearch}>
         <input
-          className="search-input"
+          className="search__input"
           onChange={handleInput}
           placeholder="Find a movie"
           type="text"
           value={inputValue}
         />
-        <button className="search-btn" type="submit">
+        <button className="search__btn" type="submit">
           Search
         </button>
       </form>
