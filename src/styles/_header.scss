@@ -11,15 +11,8 @@
     height: 100vh;
   }
   &__container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 75vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    @include position($height: 75vh);
+    @include flexbox(column, space-evenly);
     color: white;
     text-align: center;
   }
@@ -27,7 +20,7 @@
     font-family: "Bungee Outline", cursive;
     font-size: 5rem;
     line-height: 1;
-    text-shadow: 0px 0px 10px #ddd;
+    text-shadow: 0px 0px 10px $pink-color;
   }
   &__desc {
     width: 80%;
