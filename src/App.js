@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import Header from "./Header";
-import Movie from "./Movie";
+import Header from "./components/Header";
+import Movie from "./components/Movie";
 
 const API_KEY = "2fc6065a";
 const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
@@ -9,19 +9,15 @@ const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-  const [isSearched, setIsSearched] = useState(false);
   const [movies, setMovies] = useState([]);
 
   const handleInput = (e) => {
     setInputValue(e.target.value);
-    // if (isSearched) {
-    //   setInputValue("");
-    // }
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(BASE_API_URL + `"${inputValue}"`);
+    // console.log(BASE_API_URL + `"${inputValue}"`);
     fetch(BASE_API_URL + `"${inputValue}"`)
       .then((response) => {
         if (response.ok) {
@@ -32,6 +28,7 @@ function App() {
       })
       .then((response) => setMovies(response.Search))
       .catch((error) => console.log(`Błąd: ${error}`));
+      setInputValue("");
   };
 
   return (
