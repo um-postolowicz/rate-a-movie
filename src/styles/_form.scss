@@ -2,21 +2,27 @@
   @include position($top: 70vh, $height: 25vh);
   @include flexbox();
   &__input {
-    height: 4.2rem;
+    height: 3.8rem;
     width: 55%;
     border-radius: 10px 0 0 10px;
     border: 2px solid #fccb90;
     &::placeholder {
       padding-left: 10px;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 600;
+      @include media-query(xxsmall) {
+        font-size: 2rem;
+      }
     }
     &:focus {
       outline: none;
     }
+    @include media-query(xxsmall) {
+      height: 4.2rem;
+    }
   }
   &__btn {
-    height: 4.2rem;
+    height: 3.8rem;
     width: 25%;
     border: none;
     border-radius: 0 10px 10px 0;
@@ -25,7 +31,11 @@
       $orange-color 0%,
       $pink-color 100%
     );
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
+    @include media-query(xxsmall) {
+      height: 4.2rem;
+      font-size: 2rem;
+    }
   }
 }

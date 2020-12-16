@@ -17,15 +17,22 @@
     text-align: center;
   }
   &__title {
+    margin-top: 20px;
     font-family: "Bungee Outline", cursive;
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1;
     text-shadow: 0px 0px 10px $pink-color;
+    @include media-query(xxsmall) {
+      font-size: 5rem;
+    }
   }
   &__desc {
     width: 80%;
-    font-size: 1.8rem;
+    font-size: 1.55rem;
     line-height: 1.5;
     letter-spacing: 2px;
+    @include media-query(xxsmall) {
+      font-size: 1.8rem;
+    }
   }
 }
