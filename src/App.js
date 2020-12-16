@@ -8,6 +8,7 @@ const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s="avengers"`;
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [isSearched, setIsSearched] = useState(false);
 
   useEffect(() => {
     fetch(API_URL)
@@ -24,10 +25,7 @@ function App() {
 
   return (
     <>
-      {/* <h1 className="app-title">Rate your Movie</h1>
-      <input className="search" type="text" />
-      <ul className="movies-list"> */}
-      <Header />
+      <Header isSearched={isSearched} />
       <ul className="movies-list">
         {movies.map((movie) =>
           movie.Type === "movie" ? (
