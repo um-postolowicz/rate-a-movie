@@ -270,6 +270,7 @@ html {
   width: 55%;
   border-radius: 10px 0 0 10px;
   border: 2px solid #fccb90;
+  font-size: 1.6rem;
 }
 
 .search__input::-webkit-input-placeholder {
@@ -410,12 +411,14 @@ html {
 @media (orientation: portrait) and (min-width: 359px) {
   .search__input {
     height: 3.8rem;
+    font-size: 1.7rem;
   }
 }
 
 @media (orientation: portrait) and (min-width: 410px) {
   .search__input {
     height: 3.9rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -425,6 +428,7 @@ html {
     height: 4.7rem;
     width: 70%;
     border-radius: 10px;
+    font-size: 2.2rem;
   }
 }
 
@@ -434,6 +438,7 @@ html {
     height: 5rem;
     width: 70%;
     border-radius: 10px;
+    font-size: 2.4rem;
   }
 }
 
@@ -449,6 +454,7 @@ html {
   .search__input {
     margin-bottom: 40px;
     height: 6.3rem;
+    font-size: 3rem;
   }
 }
 
@@ -458,6 +464,7 @@ html {
     width: 50%;
     height: 4.5rem;
     border-radius: 10px 0 0 10px;
+    font-size: 1.8rem;
   }
 }
 

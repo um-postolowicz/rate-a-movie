@@ -29,6 +29,7 @@
     width: 55%;
     border-radius: 10px 0 0 10px;
     border: 2px solid #fccb90;
+    font-size: 1.6rem;
     &::placeholder {
       padding-left: 10px;
       font-size: 1.6rem;
@@ -62,21 +63,25 @@
     }
     @include media-query(xxsmall, $portrait) {
       height: 3.8rem;
+      font-size: 1.7rem;
     }
     @include media-query(xsmall, $portrait) {
       height: 3.9rem;
+      font-size: 1.8rem;
     }
     @include media-query(small, $portrait) {
       margin-bottom: 20px;
       height: 4.7rem;
       width: 70%;
       border-radius: 10px;
+      font-size: 2.2rem;
     }
     @include media-query(medium, $portrait) {
       margin-bottom: 30px;
       height: 5rem;
       width: 70%;
       border-radius: 10px;
+      font-size: 2.4rem;
     }
     @include media-query(large, $landscape) {
       margin-bottom: 20px;
@@ -86,12 +91,14 @@
     @include media-query(large, $portrait) {
       margin-bottom: 40px;
       height: 6.3rem;
+      font-size: 3rem;
     }
     @include media-query(xxlarge, $landscape) {
       margin-bottom: 0;
       width: 50%;
       height: 4.5rem;
       border-radius: 10px 0 0 10px;
+      font-size: 1.8rem;
     }
   }
   &__btn {
