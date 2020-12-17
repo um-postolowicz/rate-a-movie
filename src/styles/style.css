@@ -232,6 +232,15 @@ html {
   }
 }
 
+@media (orientation: landscape) and (min-width: 1439px) {
+  .search {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .search__input {
   height: 3.5rem;
   width: 55%;
@@ -350,6 +359,25 @@ html {
   }
 }
 
+@media (orientation: landscape) and (min-width: 1439px) {
+  .search__input::-webkit-input-placeholder {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .search__input:-ms-input-placeholder {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .search__input::-ms-input-placeholder {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .search__input::placeholder {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+}
+
 .search__input:focus {
   outline: none;
 }
@@ -396,6 +424,15 @@ html {
   .search__input {
     margin-bottom: 40px;
     height: 6.3rem;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1439px) {
+  .search__input {
+    margin-bottom: 0;
+    width: 50%;
+    height: 4.5rem;
+    border-radius: 10px 0 0 10px;
   }
 }
 
@@ -457,6 +494,15 @@ html {
     height: 6.3rem;
     font-size: 3rem;
     letter-spacing: 2px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1439px) {
+  .search__btn {
+    margin-bottom: 0;
+    width: 10%;
+    height: 4.5rem;
+    border-radius: 0 10px 10px 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
