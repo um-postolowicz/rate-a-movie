@@ -1,11 +1,15 @@
 $breakpoints: (
-  xxsmall: "min-width: 321px",
-  small: "min-width: 640px",
-  medium: "min-width: 800px",
-  large: "min-width: 1024px",
-  xlarge: "min-width: 1200px",
-  xxlarge: "min-width: 1440px",
+  xxsmall: "min-width:359px",
+  xsmall: "min-width: 410px",
+  small: "min-width: 639px",
+  medium: "min-width: 767px",
+  large: "min-width: 1023px",
+  xlarge: "min-width: 1199px",
+  xxlarge: "min-width: 1439px",
 );
+
+$landscape: "orientation:landscape";
+$portrait: "orientation:portrait";
 
 $pink-color: #d57eeb;
 $orange-color: #fccb90;

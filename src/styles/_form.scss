@@ -1,28 +1,53 @@
 .search {
   @include position($top: 70vh, $height: 25vh);
   @include flexbox();
+  @include media-query(xxsmall, $portrait) {
+    top: 68vh;
+  }
+  @include media-query(xsmall, $portrait) {
+    top: 68vh;
+  }
+  @include media-query(medium, $portrait) {
+    flex-direction: column;
+  }
   &__input {
-    height: 3.8rem;
+    height: 3.5rem;
     width: 55%;
     border-radius: 10px 0 0 10px;
     border: 2px solid #fccb90;
     &::placeholder {
       padding-left: 10px;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 600;
-      @include media-query(xxsmall) {
-        font-size: 2rem;
+      @include media-query(xxsmall, $portrait) {
+        font-size: 1.7rem;
+      }
+      @include media-query(xsmall, $portrait) {
+        font-size: 1.8rem;
+        line-height: 1;
+      }
+      @include media-query(medium, $portrait) {
+        font-size: 2.4rem;
       }
     }
     &:focus {
       outline: none;
     }
-    @include media-query(xxsmall) {
-      height: 4.2rem;
+    @include media-query(xxsmall, $portrait) {
+      height: 3.8rem;
+    }
+    @include media-query(xsmall, $portrait) {
+      height: 3.9rem;
+    }
+    @include media-query(medium, $portrait) {
+      margin-bottom: 30px;
+      height: 5rem;
+      width: 70%;
+      border-radius: 10px;
     }
   }
   &__btn {
-    height: 3.8rem;
+    height: 3.5rem;
     width: 25%;
     border: none;
     border-radius: 0 10px 10px 0;
@@ -31,11 +56,22 @@
       $orange-color 0%,
       $pink-color 100%
     );
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
-    @include media-query(xxsmall) {
-      height: 4.2rem;
-      font-size: 2rem;
+    @include media-query(xxsmall, $portrait) {
+      height: 3.8rem;
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
+    @include media-query(xsmall, $portrait) {
+      height: 3.9rem;
+      font-size: 1.9rem;
+      font-weight: 600;
+    }
+    @include media-query(medium, $portrait) {
+      height: 5rem;
+      border-radius: 10px;
+      font-size: 2.4rem;
     }
   }
 }

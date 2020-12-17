@@ -1,7 +1,7 @@
-@mixin media-query($breakpoint) {
+@mixin media-query($breakpoint, $orientation) {
   $size: map-get($breakpoints, $breakpoint);
   @if ($size) {
-    @media ($size) {
+    @media ($orientation) and ($size) {
       @content;
     }
   } @else {

@@ -58,22 +58,46 @@ html {
   text-shadow: 0px 0px 10px #d57eeb;
 }
 
-@media (min-width: 321px) {
+@media (orientation: portrait) and (min-width: 359px) {
+  .header__title {
+    font-size: 4.8rem;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
   .header__title {
     font-size: 5rem;
   }
 }
 
+@media (orientation: portrait) and (min-width: 767px) {
+  .header__title {
+    font-size: 8rem;
+  }
+}
+
 .header__desc {
   width: 80%;
-  font-size: 1.55rem;
+  font-size: 1.4rem;
   line-height: 1.5;
   letter-spacing: 2px;
 }
 
-@media (min-width: 321px) {
+@media (orientation: portrait) and (min-width: 359px) {
   .header__desc {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .header__desc {
+    font-size: 1.6rem;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 767px) {
+  .header__desc {
+    font-size: 2.5rem;
   }
 }
 
@@ -98,8 +122,29 @@ html {
           align-items: center;
 }
 
+@media (orientation: portrait) and (min-width: 359px) {
+  .search {
+    top: 68vh;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .search {
+    top: 68vh;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 767px) {
+  .search {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .search__input {
-  height: 3.8rem;
+  height: 3.5rem;
   width: 55%;
   border-radius: 10px 0 0 10px;
   border: 2px solid #fccb90;
@@ -107,40 +152,74 @@ html {
 
 .search__input::-webkit-input-placeholder {
   padding-left: 10px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .search__input:-ms-input-placeholder {
   padding-left: 10px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .search__input::-ms-input-placeholder {
   padding-left: 10px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .search__input::placeholder {
   padding-left: 10px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
-@media (min-width: 321px) {
+@media (orientation: portrait) and (min-width: 359px) {
   .search__input::-webkit-input-placeholder {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   .search__input:-ms-input-placeholder {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   .search__input::-ms-input-placeholder {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   .search__input::placeholder {
-    font-size: 2rem;
+    font-size: 1.7rem;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .search__input::-webkit-input-placeholder {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .search__input:-ms-input-placeholder {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .search__input::-ms-input-placeholder {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .search__input::placeholder {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 767px) {
+  .search__input::-webkit-input-placeholder {
+    font-size: 2.4rem;
+  }
+  .search__input:-ms-input-placeholder {
+    font-size: 2.4rem;
+  }
+  .search__input::-ms-input-placeholder {
+    font-size: 2.4rem;
+  }
+  .search__input::placeholder {
+    font-size: 2.4rem;
   }
 }
 
@@ -148,26 +227,58 @@ html {
   outline: none;
 }
 
-@media (min-width: 321px) {
+@media (orientation: portrait) and (min-width: 359px) {
   .search__input {
-    height: 4.2rem;
+    height: 3.8rem;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .search__input {
+    height: 3.9rem;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 767px) {
+  .search__input {
+    margin-bottom: 30px;
+    height: 5rem;
+    width: 70%;
+    border-radius: 10px;
   }
 }
 
 .search__btn {
-  height: 3.8rem;
+  height: 3.5rem;
   width: 25%;
   border: none;
   border-radius: 0 10px 10px 0;
   background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-transform: uppercase;
 }
 
-@media (min-width: 321px) {
+@media (orientation: portrait) and (min-width: 359px) {
   .search__btn {
-    height: 4.2rem;
-    font-size: 2rem;
+    height: 3.8rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .search__btn {
+    height: 3.9rem;
+    font-size: 1.9rem;
+    font-weight: 600;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 767px) {
+  .search__btn {
+    height: 5rem;
+    border-radius: 10px;
+    font-size: 2.4rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

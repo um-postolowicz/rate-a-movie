@@ -22,17 +22,31 @@
     font-size: 4rem;
     line-height: 1;
     text-shadow: 0px 0px 10px $pink-color;
-    @include media-query(xxsmall) {
+    @include media-query(xxsmall, $portrait) {
+      font-size: 4.8rem;
+    }
+    @include media-query(xsmall, $portrait) {
       font-size: 5rem;
+    }
+    @include media-query(medium, $portrait) {
+      font-size: 8rem;
+    }
+    @include media-query(large, $landscape) {
     }
   }
   &__desc {
     width: 80%;
-    font-size: 1.55rem;
+    font-size: 1.4rem;
     line-height: 1.5;
     letter-spacing: 2px;
-    @include media-query(xxsmall) {
-      font-size: 1.8rem;
+    @include media-query(xxsmall, $portrait) {
+      font-size: 1.5rem;
+    }
+    @include media-query(xsmall, $portrait) {
+      font-size: 1.6rem;
+    }
+    @include media-query(medium, $portrait) {
+      font-size: 2.5rem;
     }
   }
 }
