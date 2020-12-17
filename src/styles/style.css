@@ -404,6 +404,7 @@ html {
 
 .search__input:focus {
   outline: none;
+  border: 3px solid #f99c2d;
 }
 
 @media (orientation: portrait) and (min-width: 359px) {
@@ -468,6 +469,22 @@ html {
   background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
   font-size: 1.6rem;
   text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.search__btn:hover {
+  background-image: none;
+  background-color: #f99c2d;
+  color: white;
+}
+
+.search__btn:focus {
+  outline: none;
+  background-image: none;
+  background-color: #d57eeb;
+  color: white;
 }
 
 @media (orientation: portrait) and (min-width: 359px) {

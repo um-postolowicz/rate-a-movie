@@ -58,6 +58,7 @@
     }
     &:focus {
       outline: none;
+      border: 3px solid darken($orange-color, 20%);
     }
     @include media-query(xxsmall, $portrait) {
       height: 3.8rem;
@@ -105,6 +106,19 @@
     );
     font-size: 1.6rem;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-image: none;
+      background-color: darken($orange-color, 20%);
+      color: white;
+    }
+    &:focus {
+      outline: none;
+      background-image: none;
+      background-color: $pink-color;
+      color: white;
+    }
     @include media-query(xxsmall, $portrait) {
       height: 3.8rem;
       font-size: 1.7rem;
