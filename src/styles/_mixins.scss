@@ -9,6 +9,12 @@
   }
 }
 
+@mixin input-button-style($height, $font-size, $border-radius: 10px 0 0 10px) {
+  height: $height;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
 @mixin flexbox(
   $flex-direction: row,
   $justify-content: center,

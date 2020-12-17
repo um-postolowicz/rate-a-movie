@@ -25,11 +25,39 @@
     flex-direction: row;
   }
   &__input {
-    height: 3.5rem;
+    @include input-button-style(3.5rem, 1.6rem);
     width: 55%;
-    border-radius: 10px 0 0 10px;
     border: 2px solid #fccb90;
-    font-size: 1.6rem;
+    @include media-query(xxsmall, $portrait) {
+      @include input-button-style(3.8rem, 1.7rem);
+    }
+    @include media-query(xsmall, $portrait) {
+      @include input-button-style(3.9rem, 1.8rem);
+    }
+    @include media-query(small, $portrait) {
+      @include input-button-style(4.7rem, 2.2rem, 10px);
+      margin-bottom: 20px;
+      width: 70%;
+    }
+    @include media-query(medium, $portrait) {
+      @include input-button-style(5rem, 2.4rem, 10px);
+      margin-bottom: 30px;
+      width: 70%;
+    }
+    @include media-query(large, $landscape) {
+      @include input-button-style(5rem, 2.4rem, 10px);
+      margin-bottom: 20px;
+      width: 70%;
+    }
+    @include media-query(large, $portrait) {
+      @include input-button-style(6.3rem, 3rem, 10px);
+      margin-bottom: 40px;
+    }
+    @include media-query(xxlarge, $landscape) {
+      @include input-button-style(4.5rem, 1.8rem);
+      margin-bottom: 0;
+      width: 50%;
+    }
     &::placeholder {
       padding-left: 10px;
       font-size: 1.6rem;
@@ -61,48 +89,9 @@
       outline: none;
       border: 3px solid darken($orange-color, 20%);
     }
-    @include media-query(xxsmall, $portrait) {
-      height: 3.8rem;
-      font-size: 1.7rem;
-    }
-    @include media-query(xsmall, $portrait) {
-      height: 3.9rem;
-      font-size: 1.8rem;
-    }
-    @include media-query(small, $portrait) {
-      margin-bottom: 20px;
-      height: 4.7rem;
-      width: 70%;
-      border-radius: 10px;
-      font-size: 2.2rem;
-    }
-    @include media-query(medium, $portrait) {
-      margin-bottom: 30px;
-      height: 5rem;
-      width: 70%;
-      border-radius: 10px;
-      font-size: 2.4rem;
-    }
-    @include media-query(large, $landscape) {
-      margin-bottom: 20px;
-      width: 70%;
-      border-radius: 10px;
-    }
-    @include media-query(large, $portrait) {
-      margin-bottom: 40px;
-      height: 6.3rem;
-      font-size: 3rem;
-    }
-    @include media-query(xxlarge, $landscape) {
-      margin-bottom: 0;
-      width: 50%;
-      height: 4.5rem;
-      border-radius: 10px 0 0 10px;
-      font-size: 1.8rem;
-    }
   }
   &__btn {
-    height: 3.5rem;
+    @include input-button-style(3.5rem, 1.6rem);
     width: 25%;
     border: none;
     border-radius: 0 10px 10px 0;
@@ -111,7 +100,6 @@
       $orange-color 0%,
       $pink-color 100%
     );
-    font-size: 1.6rem;
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
@@ -127,43 +115,34 @@
       color: white;
     }
     @include media-query(xxsmall, $portrait) {
-      height: 3.8rem;
-      font-size: 1.7rem;
-      font-weight: bold;
+      @include input-button-style(3.8rem, 1.7rem, 0 10px 10px 0);
+      font-weight: 600;
     }
     @include media-query(xsmall, $portrait) {
-      height: 3.9rem;
-      font-size: 1.9rem;
+      @include input-button-style(3.9rem, 1.9rem, 0 10px 10px 0);
       font-weight: 600;
     }
     @include media-query(small, $portrait) {
-      height: 4.7rem;
-      font-size: 2.2rem;
+      @include input-button-style(4.7rem, 2.2rem, 10px);
       letter-spacing: 2px;
-      border-radius: 10px;
     }
     @include media-query(medium, $portrait) {
-      height: 5rem;
-      border-radius: 10px;
-      font-size: 2.4rem;
+      @include input-button-style(5rem, 2.4rem, 10px);
     }
     @include media-query(large, $landscape) {
+      @include input-button-style(5rem, 2rem, 10px);
       width: 20%;
-      border-radius: 10px;
-      font-size: 2rem;
       letter-spacing: 2px;
       font-weight: bold;
     }
     @include media-query(large, $portrait) {
-      height: 6.3rem;
-      font-size: 3rem;
+      @include input-button-style(6.3rem, 3rem, 10px);
       letter-spacing: 2px;
     }
     @include media-query(xxlarge, $landscape) {
+      @include input-button-style(4.5rem, 1.6rem, 0 10px 10px 0);
       margin-bottom: 0;
       width: 10%;
-      height: 4.5rem;
-      border-radius: 0 10px 10px 0;
     }
   }
 }

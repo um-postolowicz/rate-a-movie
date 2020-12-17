@@ -267,10 +267,75 @@ html {
 
 .search__input {
   height: 3.5rem;
-  width: 55%;
-  border-radius: 10px 0 0 10px;
-  border: 2px solid #fccb90;
   font-size: 1.6rem;
+  border-radius: 10px 0 0 10px;
+  width: 55%;
+  border: 2px solid #fccb90;
+}
+
+@media (orientation: portrait) and (min-width: 359px) {
+  .search__input {
+    height: 3.8rem;
+    font-size: 1.7rem;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .search__input {
+    height: 3.9rem;
+    font-size: 1.8rem;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 639px) {
+  .search__input {
+    height: 4.7rem;
+    font-size: 2.2rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 70%;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 767px) {
+  .search__input {
+    height: 5rem;
+    font-size: 2.4rem;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 70%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1023px) {
+  .search__input {
+    height: 5rem;
+    font-size: 2.4rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 70%;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 1023px) {
+  .search__input {
+    height: 6.3rem;
+    font-size: 3rem;
+    border-radius: 10px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1439px) {
+  .search__input {
+    height: 4.5rem;
+    font-size: 1.8rem;
+    border-radius: 10px 0 0 10px;
+    margin-bottom: 0;
+    width: 50%;
+  }
 }
 
 .search__input::-webkit-input-placeholder {
@@ -408,73 +473,14 @@ html {
   border: 3px solid #f99c2d;
 }
 
-@media (orientation: portrait) and (min-width: 359px) {
-  .search__input {
-    height: 3.8rem;
-    font-size: 1.7rem;
-  }
-}
-
-@media (orientation: portrait) and (min-width: 410px) {
-  .search__input {
-    height: 3.9rem;
-    font-size: 1.8rem;
-  }
-}
-
-@media (orientation: portrait) and (min-width: 639px) {
-  .search__input {
-    margin-bottom: 20px;
-    height: 4.7rem;
-    width: 70%;
-    border-radius: 10px;
-    font-size: 2.2rem;
-  }
-}
-
-@media (orientation: portrait) and (min-width: 767px) {
-  .search__input {
-    margin-bottom: 30px;
-    height: 5rem;
-    width: 70%;
-    border-radius: 10px;
-    font-size: 2.4rem;
-  }
-}
-
-@media (orientation: landscape) and (min-width: 1023px) {
-  .search__input {
-    margin-bottom: 20px;
-    width: 70%;
-    border-radius: 10px;
-  }
-}
-
-@media (orientation: portrait) and (min-width: 1023px) {
-  .search__input {
-    margin-bottom: 40px;
-    height: 6.3rem;
-    font-size: 3rem;
-  }
-}
-
-@media (orientation: landscape) and (min-width: 1439px) {
-  .search__input {
-    margin-bottom: 0;
-    width: 50%;
-    height: 4.5rem;
-    border-radius: 10px 0 0 10px;
-    font-size: 1.8rem;
-  }
-}
-
 .search__btn {
   height: 3.5rem;
+  font-size: 1.6rem;
+  border-radius: 10px 0 0 10px;
   width: 25%;
   border: none;
   border-radius: 0 10px 10px 0;
   background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
-  font-size: 1.6rem;
   text-transform: uppercase;
   cursor: pointer;
   -webkit-transition: 0.3s;
@@ -498,7 +504,8 @@ html {
   .search__btn {
     height: 3.8rem;
     font-size: 1.7rem;
-    font-weight: bold;
+    border-radius: 0 10px 10px 0;
+    font-weight: 600;
   }
 }
 
@@ -506,6 +513,7 @@ html {
   .search__btn {
     height: 3.9rem;
     font-size: 1.9rem;
+    border-radius: 0 10px 10px 0;
     font-weight: 600;
   }
 }
@@ -514,24 +522,25 @@ html {
   .search__btn {
     height: 4.7rem;
     font-size: 2.2rem;
-    letter-spacing: 2px;
     border-radius: 10px;
+    letter-spacing: 2px;
   }
 }
 
 @media (orientation: portrait) and (min-width: 767px) {
   .search__btn {
     height: 5rem;
-    border-radius: 10px;
     font-size: 2.4rem;
+    border-radius: 10px;
   }
 }
 
 @media (orientation: landscape) and (min-width: 1023px) {
   .search__btn {
-    width: 20%;
-    border-radius: 10px;
+    height: 5rem;
     font-size: 2rem;
+    border-radius: 10px;
+    width: 20%;
     letter-spacing: 2px;
     font-weight: bold;
   }
@@ -541,16 +550,18 @@ html {
   .search__btn {
     height: 6.3rem;
     font-size: 3rem;
+    border-radius: 10px;
     letter-spacing: 2px;
   }
 }
 
 @media (orientation: landscape) and (min-width: 1439px) {
   .search__btn {
+    height: 4.5rem;
+    font-size: 1.6rem;
+    border-radius: 0 10px 10px 0;
     margin-bottom: 0;
     width: 10%;
-    height: 4.5rem;
-    border-radius: 0 10px 10px 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
