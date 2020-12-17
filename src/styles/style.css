@@ -331,7 +331,7 @@ html {
 @media (orientation: landscape) and (min-width: 1439px) {
   .search__input {
     height: 4.5rem;
-    font-size: 1.8rem;
+    font-size: 3rem;
     border-radius: 10px 0 0 10px;
     margin-bottom: 0;
     width: 50%;
@@ -476,10 +476,9 @@ html {
 .search__btn {
   height: 3.5rem;
   font-size: 1.6rem;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0 10px 10px 0;
   width: 25%;
   border: none;
-  border-radius: 0 10px 10px 0;
   background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
   text-transform: uppercase;
   cursor: pointer;

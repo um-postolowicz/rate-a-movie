@@ -9,7 +9,7 @@
   }
 }
 
-@mixin input-button-style($height, $font-size, $border-radius: 10px 0 0 10px) {
+@mixin input-button-style($height, $font-size, $border-radius) {
   height: $height;
   font-size: $font-size;
   border-radius: $border-radius;

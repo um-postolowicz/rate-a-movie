@@ -8,8 +8,20 @@ $breakpoints: (
   xxlarge: "min-width: 1439px",
 );
 
+//screen orientations
 $landscape: "orientation:landscape";
 $portrait: "orientation:portrait";
 
+//colors
 $pink-color: #d57eeb;
 $orange-color: #fccb90;
+
+//border
+$input-border-half: 10px 0 0 10px;
+$btn-border-half: 0 10px 10px 0;
+$border-radius: 10px;
+
+//background images
+$header-img-small: "../images/header-img-640x400.jpg";
+$header-img-medium: "../images/header-img-1280x800.jpg";
+$header-img-large: "../images/header-img-1920x1200.jpg";
