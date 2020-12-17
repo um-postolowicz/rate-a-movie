@@ -23,7 +23,7 @@
     height: 100vh;
   }
   &__container {
-    @include position($height: 75vh);
+    @include position($height: 80vh);
     @include flexbox(column, space-evenly);
     color: white;
     text-align: center;
@@ -58,57 +58,26 @@
   }
   &__desc {
     width: 80%;
-    font-size: 1.4rem;
+    @include desc-style(1.3rem, 10px, 1.35rem);
     line-height: 1.5;
     letter-spacing: 2px;
     @include media-query(xxsmall, $portrait) {
-      font-size: 1.5rem;
+      @include desc-style(1.5rem, 10px, 1.7rem);
     }
     @include media-query(xsmall, $portrait) {
-      font-size: 1.6rem;
+      @include desc-style(1.6rem, 10px, 1.8rem);
     }
     @include media-query(small, $portrait) {
-      font-size: 1.9rem;
-      span {
-        display: block;
-        margin-bottom: 30px;
-        &:nth-child(3),
-        &:nth-child(4) {
-          font-size: 2.4r;
-          font-weight: 600;
-        }
-      }
+      @include desc-style(1.9rem, 30px, 2.1rem);
     }
     @include media-query(medium, $portrait) {
-      font-size: 2.2rem;
-      span {
-        display: block;
-        margin-bottom: 10px;
-      }
+      @include desc-style(2rem, 10px, 2.2rem);
     }
     @include media-query(large, $landscape) {
-      span {
-        display: block;
-        margin-bottom: 20px;
-        font-size: 1.6rem;
-        &:nth-child(3),
-        &:nth-child(4) {
-          font-size: 1.8rem;
-          font-weight: 600;
-        }
-      }
+      @include desc-style(1.6rem, 20px, 1.8rem);
     }
     @include media-query(large, $portrait) {
-      span {
-        display: block;
-        margin-bottom: 50px;
-        font-size: 2rem;
-        &:nth-child(3),
-        &:nth-child(4) {
-          font-size: 2.4rem;
-          font-weight: 600;
-        }
-      }
+      @include desc-style(2.2rem, 50px, 2.4rem);
     }
   }
 }

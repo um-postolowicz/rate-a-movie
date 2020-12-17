@@ -9,6 +9,23 @@
   }
 }
 
+@mixin desc-style(
+  $font-size: inherit,
+  $margin-bottom: 0,
+  $span-font-size: inherit
+) {
+  font-size: $font-size;
+  span {
+    display: block;
+    margin-bottom: $margin-bottom;
+    &:nth-child(3),
+    &:nth-child(4) {
+      font-size: $span-font-size;
+      font-weight: 600;
+    }
+  }
+}
+
 @mixin input-button-style($height, $font-size, $border-radius) {
   height: $height;
   font-size: $font-size;

@@ -1,22 +1,22 @@
 .search {
-  @include position($top: 70vh, $height: 25vh);
+  @include position($top: 75vh, $height: 20vh);
   @include flexbox();
   @include media-query(xxsmall, $portrait) {
-    top: 68vh;
+    top: 73vh;
   }
   @include media-query(xsmall, $portrait) {
-    top: 68vh;
+    top: 70vh;
   }
   @include media-query(small, $portrait) {
     flex-direction: column;
-    top: 67vh;
+    top: 70vh;
   }
   @include media-query(medium, $portrait) {
     flex-direction: column;
   }
   @include media-query(large, $landscape) {
     flex-direction: column;
-    top: 66vh;
+    top: 68vh;
   }
   @include media-query(large, $portrait) {
     top: 65vh;

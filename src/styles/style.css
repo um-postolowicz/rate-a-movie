@@ -55,7 +55,7 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  height: 75vh;
+  height: 80vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -123,20 +123,46 @@ html {
 
 .header__desc {
   width: 80%;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.5;
   letter-spacing: 2px;
+}
+
+.header__desc span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.header__desc span:nth-child(3), .header__desc span:nth-child(4) {
+  font-size: 1.35rem;
+  font-weight: 600;
 }
 
 @media (orientation: portrait) and (min-width: 359px) {
   .header__desc {
     font-size: 1.5rem;
   }
+  .header__desc span {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .header__desc span:nth-child(3), .header__desc span:nth-child(4) {
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
 }
 
 @media (orientation: portrait) and (min-width: 410px) {
   .header__desc {
     font-size: 1.6rem;
+  }
+  .header__desc span {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .header__desc span:nth-child(3), .header__desc span:nth-child(4) {
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 }
 
@@ -149,26 +175,32 @@ html {
     margin-bottom: 30px;
   }
   .header__desc span:nth-child(3), .header__desc span:nth-child(4) {
-    font-size: 2.4r;
+    font-size: 2.1rem;
     font-weight: 600;
   }
 }
 
 @media (orientation: portrait) and (min-width: 767px) {
   .header__desc {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .header__desc span {
     display: block;
     margin-bottom: 10px;
   }
+  .header__desc span:nth-child(3), .header__desc span:nth-child(4) {
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
 }
 
 @media (orientation: landscape) and (min-width: 1023px) {
+  .header__desc {
+    font-size: 1.6rem;
+  }
   .header__desc span {
     display: block;
     margin-bottom: 20px;
-    font-size: 1.6rem;
   }
   .header__desc span:nth-child(3), .header__desc span:nth-child(4) {
     font-size: 1.8rem;
@@ -177,10 +209,12 @@ html {
 }
 
 @media (orientation: portrait) and (min-width: 1023px) {
+  .header__desc {
+    font-size: 2.2rem;
+  }
   .header__desc span {
     display: block;
     margin-bottom: 50px;
-    font-size: 2rem;
   }
   .header__desc span:nth-child(3), .header__desc span:nth-child(4) {
     font-size: 2.4rem;
@@ -190,9 +224,9 @@ html {
 
 .search {
   position: absolute;
-  top: 70vh;
+  top: 75vh;
   left: 0;
-  height: 25vh;
+  height: 20vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -211,13 +245,13 @@ html {
 
 @media (orientation: portrait) and (min-width: 359px) {
   .search {
-    top: 68vh;
+    top: 73vh;
   }
 }
 
 @media (orientation: portrait) and (min-width: 410px) {
   .search {
-    top: 68vh;
+    top: 70vh;
   }
 }
 
@@ -227,7 +261,7 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    top: 67vh;
+    top: 70vh;
   }
 }
 
@@ -246,7 +280,7 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    top: 66vh;
+    top: 68vh;
   }
 }
 
