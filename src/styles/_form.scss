@@ -7,8 +7,19 @@
   @include media-query(xsmall, $portrait) {
     top: 68vh;
   }
+  @include media-query(small, $portrait) {
+    flex-direction: column;
+    top: 67vh;
+  }
   @include media-query(medium, $portrait) {
     flex-direction: column;
+  }
+  @include media-query(large, $landscape) {
+    flex-direction: column;
+    top: 66vh;
+  }
+  @include media-query(large, $portrait) {
+    top: 65vh;
   }
   &__input {
     height: 3.5rem;
@@ -26,8 +37,16 @@
         font-size: 1.8rem;
         line-height: 1;
       }
+      @include media-query(small, $portrait) {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+      }
       @include media-query(medium, $portrait) {
         font-size: 2.4rem;
+      }
+      @include media-query(large, $portrait) {
+        font-size: 3rem;
+        letter-spacing: 2px;
       }
     }
     &:focus {
@@ -39,11 +58,26 @@
     @include media-query(xsmall, $portrait) {
       height: 3.9rem;
     }
+    @include media-query(small, $portrait) {
+      margin-bottom: 20px;
+      height: 4.7rem;
+      width: 70%;
+      border-radius: 10px;
+    }
     @include media-query(medium, $portrait) {
       margin-bottom: 30px;
       height: 5rem;
       width: 70%;
       border-radius: 10px;
+    }
+    @include media-query(large, $landscape) {
+      margin-bottom: 20px;
+      width: 70%;
+      border-radius: 10px;
+    }
+    @include media-query(large, $portrait) {
+      margin-bottom: 40px;
+      height: 6.3rem;
     }
   }
   &__btn {
@@ -68,10 +102,28 @@
       font-size: 1.9rem;
       font-weight: 600;
     }
+    @include media-query(small, $portrait) {
+      height: 4.7rem;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      border-radius: 10px;
+    }
     @include media-query(medium, $portrait) {
       height: 5rem;
       border-radius: 10px;
       font-size: 2.4rem;
+    }
+    @include media-query(large, $landscape) {
+      width: 20%;
+      border-radius: 10px;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+    @include media-query(large, $portrait) {
+      height: 6.3rem;
+      font-size: 3rem;
+      letter-spacing: 2px;
     }
   }
 }

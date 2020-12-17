@@ -50,8 +50,14 @@ html {
   text-align: center;
 }
 
+@media (orientation: portrait) and (min-width: 767px) {
+  .header__container {
+    height: 72vh;
+  }
+}
+
 .header__title {
-  margin-top: 20px;
+  margin: 20px 5vw 0;
   font-family: "Bungee Outline", cursive;
   font-size: 4rem;
   line-height: 1;
@@ -70,9 +76,24 @@ html {
   }
 }
 
+@media (orientation: portrait) and (min-width: 639px) {
+  .header__title {
+    font-size: 7rem;
+    line-height: 1.5;
+    letter-spacing: 4px;
+  }
+}
+
 @media (orientation: portrait) and (min-width: 767px) {
   .header__title {
     font-size: 8rem;
+    line-height: 1.5;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1023px) {
+  .header__title {
+    font-size: 7rem;
   }
 }
 
@@ -95,9 +116,51 @@ html {
   }
 }
 
+@media (orientation: portrait) and (min-width: 639px) {
+  .header__desc {
+    font-size: 1.9rem;
+  }
+  .header__desc span {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .header__desc span:nth-child(3), .header__desc span:nth-child(4) {
+    font-size: 2.4r;
+    font-weight: 600;
+  }
+}
+
 @media (orientation: portrait) and (min-width: 767px) {
   .header__desc {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+  .header__desc span {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1023px) {
+  .header__desc span {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+  }
+  .header__desc span:nth-child(3), .header__desc span:nth-child(4) {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 1023px) {
+  .header__desc span {
+    display: block;
+    margin-bottom: 50px;
+    font-size: 2rem;
+  }
+  .header__desc span:nth-child(3), .header__desc span:nth-child(4) {
+    font-size: 2.4rem;
+    font-weight: 600;
   }
 }
 
@@ -134,12 +197,38 @@ html {
   }
 }
 
+@media (orientation: portrait) and (min-width: 639px) {
+  .search {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 67vh;
+  }
+}
+
 @media (orientation: portrait) and (min-width: 767px) {
   .search {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1023px) {
+  .search {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 66vh;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 1023px) {
+  .search {
+    top: 65vh;
   }
 }
 
@@ -208,6 +297,25 @@ html {
   }
 }
 
+@media (orientation: portrait) and (min-width: 639px) {
+  .search__input::-webkit-input-placeholder {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+  .search__input:-ms-input-placeholder {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+  .search__input::-ms-input-placeholder {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+  .search__input::placeholder {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+}
+
 @media (orientation: portrait) and (min-width: 767px) {
   .search__input::-webkit-input-placeholder {
     font-size: 2.4rem;
@@ -220,6 +328,25 @@ html {
   }
   .search__input::placeholder {
     font-size: 2.4rem;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 1023px) {
+  .search__input::-webkit-input-placeholder {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .search__input:-ms-input-placeholder {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .search__input::-ms-input-placeholder {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .search__input::placeholder {
+    font-size: 3rem;
+    letter-spacing: 2px;
   }
 }
 
@@ -239,12 +366,36 @@ html {
   }
 }
 
+@media (orientation: portrait) and (min-width: 639px) {
+  .search__input {
+    margin-bottom: 20px;
+    height: 4.7rem;
+    width: 70%;
+    border-radius: 10px;
+  }
+}
+
 @media (orientation: portrait) and (min-width: 767px) {
   .search__input {
     margin-bottom: 30px;
     height: 5rem;
     width: 70%;
     border-radius: 10px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1023px) {
+  .search__input {
+    margin-bottom: 20px;
+    width: 70%;
+    border-radius: 10px;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 1023px) {
+  .search__input {
+    margin-bottom: 40px;
+    height: 6.3rem;
   }
 }
 
@@ -274,11 +425,38 @@ html {
   }
 }
 
+@media (orientation: portrait) and (min-width: 639px) {
+  .search__btn {
+    height: 4.7rem;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    border-radius: 10px;
+  }
+}
+
 @media (orientation: portrait) and (min-width: 767px) {
   .search__btn {
     height: 5rem;
     border-radius: 10px;
     font-size: 2.4rem;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1023px) {
+  .search__btn {
+    width: 20%;
+    border-radius: 10px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 1023px) {
+  .search__btn {
+    height: 6.3rem;
+    font-size: 3rem;
+    letter-spacing: 2px;
   }
 }
 /*# sourceMappingURL=style.css.map */
