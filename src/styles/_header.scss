@@ -2,6 +2,18 @@
   position: relative;
   height: 100vh;
   background-image: url("../images/header-img-640x400.jpg");
+  @include media-query(small, $portrait) {
+    background-image: url("../images/header-img-1280x800.jpg");
+  }
+  @include media-query(small, $landscape) {
+    background-image: url("../images/header-img-1280x800.jpg");
+  }
+  @include media-query(xlarge, $portrait) {
+    background-image: url("../images/header-img-1920x1200.jpg");
+  }
+  @include media-query(xlarge, $landscape) {
+    background-image: url("../images/header-img-1920x1200.jpg");
+  }
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
