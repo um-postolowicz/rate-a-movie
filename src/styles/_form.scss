@@ -107,11 +107,13 @@
       background-color: darken($orange-color, 20%);
       color: white;
     }
+    &:active {
+      background-image: none;
+      background-color: $orange-color;
+      color: white;
+    }
     &:focus {
       outline: none;
-      background-image: none;
-      background-color: $pink-color;
-      color: white;
     }
     @include media-query(xxsmall, $portrait) {
       @include input-button-style(3.8rem, 1.7rem, $btn-border-half);

@@ -523,11 +523,14 @@ html {
   color: white;
 }
 
+.search__btn:active {
+  background-image: none;
+  background-color: #fccb90;
+  color: white;
+}
+
 .search__btn:focus {
   outline: none;
-  background-image: none;
-  background-color: #d57eeb;
-  color: white;
 }
 
 @media (orientation: portrait) and (min-width: 359px) {
