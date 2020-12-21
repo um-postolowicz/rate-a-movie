@@ -13,7 +13,8 @@ html {
 }
 
 body {
-  overflow: overlay;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -615,5 +616,97 @@ body {
     margin-bottom: 0;
     width: 10%;
   }
+}
+
+.movies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+.movies__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 20px auto;
+  height: 90vh;
+  width: 90%;
+  border: #fccb90 2px solid;
+}
+
+.movies__title {
+  font-size: 2.5rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.movies__type {
+  position: absolute;
+  top: -6px;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  background-color: white;
+  color: #f99c2d;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.movies__year {
+  font-size: 1.7rem;
+}
+
+.movies__poster {
+  height: 60%;
+  -webkit-box-shadow: 0 0 6px 4px #ddd;
+          box-shadow: 0 0 6px 4px #ddd;
+}
+
+.movies__btn {
+  width: 40%;
+  height: 30px;
+  border: none;
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.movies__btn:hover {
+  background-image: none;
+  background-color: #f99c2d;
+  color: white;
+}
+
+.movies__btn:active {
+  background-image: none;
+  background-color: #fccb90;
+  color: white;
+}
+
+.movies__btn:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -10,5 +10,6 @@ html {
 }
 
 body {
-  overflow: overlay;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }

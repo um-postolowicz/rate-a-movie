@@ -2,11 +2,13 @@ import React from "react";
 
 const Movie = ({ poster, title, type, year }) => {
   return (
-    <li className="movie-container">
-      <h2 className="movie-title">{title}</h2>
-      <p className="movie-type">{type}</p>
-      <img alt="movie poster" className="movie-poster" src={poster} />
-      <p className="movie-year">{year}</p>
+    <li className="movies__container">
+      <h2 className="movies__title">{title}</h2>
+      <p className="movies__type">{type.toUpperCase()}</p>
+      <h3 className="movies__year">{year}</h3>
+      <img alt="movie poster" className="movies__poster" src={poster} />
+      <button className="movies__btn">See details</button>
+      <button className="movies__btn">Rate it!</button>
     </li>
   );
 };
