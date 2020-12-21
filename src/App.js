@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { animateScroll as scroll, scroller } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 import "./styles/style.css";
 import Header from "./components/Header";
 import Movie from "./components/Movie";
@@ -22,7 +22,6 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // console.log(BASE_API_URL + `"${inputValue}"`);
     fetch(BASE_API_URL + `"${inputValue}"`)
       .then((response) => {
         if (response.ok) {
