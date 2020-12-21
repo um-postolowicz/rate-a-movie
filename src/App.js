@@ -3,6 +3,7 @@ import { animateScroll as scroll } from "react-scroll";
 import "./styles/style.css";
 import Header from "./components/Header";
 import Movie from "./components/Movie";
+import Search from "./components/Search";
 
 const API_KEY = "2fc6065a";
 const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
@@ -40,18 +41,11 @@ function App() {
     <>
       <div className="wrapper">
         <Header />
-        <form className="search" onSubmit={handleSearch}>
-          <input
-            className="search__input"
-            onChange={handleInput}
-            placeholder="Find a movie"
-            type="text"
-            value={inputValue}
-          />
-          <button className="search__btn btn" type="submit">
-            Search
-          </button>
-        </form>
+        <Search
+          handleInput={handleInput}
+          handleSearch={handleSearch}
+          inputValue={inputValue}
+        />
         <ul className="movies">
           {movies.map((movie) =>
             movie.Type === "movie" || "series" ? (
