@@ -15,6 +15,7 @@ $portrait: "orientation:portrait";
 //colors
 $pink-color: #d57eeb;
 $orange-color: #fccb90;
+$gradient-color: linear-gradient(120deg, $orange-color 0%, $pink-color 100%);
 
 //border
 $input-border-half: 10px 0 0 10px;
