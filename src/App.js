@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { animateScroll as scroll, scroller } from "react-scroll";
 import "./styles/style.css";
 import Header from "./components/Header";
 import Movie from "./components/Movie";
@@ -12,6 +13,11 @@ function App() {
 
   const handleInput = (e) => {
     setInputValue(e.target.value);
+  };
+
+  const scrollAfterSearch = () => {
+    const scrollHeight = window.innerHeight;
+    scroll.scrollTo(scrollHeight);
   };
 
   const handleSearch = (e) => {
@@ -28,6 +34,7 @@ function App() {
       .then((response) => setMovies(response.Search))
       .catch((error) => console.log(`Błąd: ${error}`));
     setInputValue("");
+    scrollAfterSearch();
   };
 
   return (
