@@ -48,7 +48,7 @@ function App() {
             type="text"
             value={inputValue}
           />
-          <button className="search__btn" type="submit">
+          <button className="search__btn btn" type="submit">
             Search
           </button>
         </form>

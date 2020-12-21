@@ -35,24 +35,5 @@
   &__btn {
     width: 40%;
     height: 30px;
-    border: none;
-    background-image: $gradient-color;
-    text-transform: uppercase;
-    border-radius: $border-radius;
-    cursor: pointer;
-    transition: 0.3s;
-    &:hover {
-      background-image: none;
-      background-color: darken($orange-color, 20%);
-      color: white;
-    }
-    &:active {
-      background-image: none;
-      background-color: $orange-color;
-      color: white;
-    }
-    &:focus {
-      outline: none;
-    }
   }
 }
