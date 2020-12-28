@@ -682,12 +682,15 @@ body {
 }
 
 .movies__stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 30px;
   font-size: 2.5rem;
   color: #f99c2d;
 }
 
 .movies__star {
-  margin: 0 3px;
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
