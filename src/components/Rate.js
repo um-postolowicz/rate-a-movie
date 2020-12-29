@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React, { useRef, useState } from "react";
 import { BsStar, BsStarHalf, BsStarFill } from "react-icons/bs";
 
@@ -36,16 +35,22 @@ const Rate = () => {
     const clickPosition = e.clientX;
     const windowWidth = window.innerWidth;
     const starsWidth = ref.current.offsetWidth;
+    // const width = ref.current.offsetLeft;
+    // console.log(width);
     const clickPositionInStarsDiv =
       clickPosition - (windowWidth - starsWidth) / 2;
-    const starId = Math.ceil(clickPositionInStarsDiv / 25);
+    const starId = Math.ceil(clickPositionInStarsDiv / 12.5);
+    // console.log(starId);
     table.forEach((element) => (element.icon = <BsStar />));
-    for (let i = 0; i < starId; i++) {
+    for (let i = 0; i < starId / 2; i++) {
       table[i].icon = <BsStarFill />;
+    }
+    if (starId % 2 !== 0) {
+      const index = Math.floor(starId / 2);
+      table[index].icon = <BsStarHalf />;
     }
     table.map((element) => <li key={element.id}>{element.icon}</li>);
     setStars(table);
-    console.log(stars);
     return stars;
   };
 

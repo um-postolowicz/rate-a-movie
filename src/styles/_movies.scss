@@ -1,5 +1,4 @@
 .movies {
-  // @include flexbox(column, center, center);
   list-style: none;
   &__container {
     position: relative;
@@ -9,11 +8,28 @@
     height: 90vh;
     width: 90%;
     border: $orange-color 2px solid;
+    @include media-query(xsmall, $portrait) {
+      border-width: 3px;
+      width: 85%;
+      height: 85vh;
+    }
+    @include media-query(small, $landscape) {
+      margin-top: 20px;
+      align-items: flex-start;
+      width: 80%;
+      padding-left: 40%;
+    }
   }
   &__title {
     font-size: 2.5rem;
     margin-top: 10px;
     text-align: center;
+    @include media-query(xsmall, $portrait) {
+      font-size: 2.7rem;
+    }
+    @include media-query(small, $landscape) {
+      font-size: 3rem;
+    }
   }
   &__type {
     position: absolute;
@@ -24,26 +40,52 @@
     color: darken($orange-color, 20%);
     letter-spacing: 2px;
     font-weight: bold;
+    @include media-query(xsmall, $portrait) {
+      font-size: 1.4rem;
+      top: -7px;
+    }
+    @include media-query(small, $landscape) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
   &__year {
     font-size: 1.7rem;
+    @include media-query(small, $landscape) {
+      font-size: 2rem;
+    }
   }
   &__poster {
     height: 60%;
+    max-width: 80%;
     box-shadow: 0 0 6px 4px #ddd;
+    @include media-query(small, $landscape) {
+      position: absolute;
+      left: 20px;
+      height: 90%;
+    }
   }
   &__btn {
     width: 40%;
-    height: 30px;
+    @include input-button-style($basic-height, 1.4rem, $border-radius);
+    @include media-query(xxsmall, $portrait) {
+      @include input-button-style($xxsmall-height, 1.5rem, $border-radius);
+      font-weight: bold;
+    }
+    @include media-query(small, $landscape) {
+      width: 55%;
+    }
   }
   &__stars {
     display: flex;
-    height: 30px;
+    height: $basic-height;
     font-size: 2.5rem;
     list-style: none;
     color: darken($orange-color, 20%);
-  }
-  &__star {
-    display: block;
+    background-color: #ddd;
+    @include media-query(xxsmall, $portrait) {
+      height: $xxsmall-height;
+      font-size: 2.7rem;
+    }
   }
 }

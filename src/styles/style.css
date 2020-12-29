@@ -649,10 +649,41 @@ body {
   border: #fccb90 2px solid;
 }
 
+@media (orientation: portrait) and (min-width: 410px) {
+  .movies__container {
+    border-width: 3px;
+    width: 85%;
+    height: 85vh;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 639px) {
+  .movies__container {
+    margin-top: 20px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 80%;
+    padding-left: 40%;
+  }
+}
+
 .movies__title {
   font-size: 2.5rem;
   margin-top: 10px;
   text-align: center;
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .movies__title {
+    font-size: 2.7rem;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 639px) {
+  .movies__title {
+    font-size: 3rem;
+  }
 }
 
 .movies__type {
@@ -666,19 +697,66 @@ body {
   font-weight: bold;
 }
 
+@media (orientation: portrait) and (min-width: 410px) {
+  .movies__type {
+    font-size: 1.4rem;
+    top: -7px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 639px) {
+  .movies__type {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
 .movies__year {
   font-size: 1.7rem;
 }
 
+@media (orientation: landscape) and (min-width: 639px) {
+  .movies__year {
+    font-size: 2rem;
+  }
+}
+
 .movies__poster {
   height: 60%;
+  max-width: 80%;
   -webkit-box-shadow: 0 0 6px 4px #ddd;
           box-shadow: 0 0 6px 4px #ddd;
+}
+
+@media (orientation: landscape) and (min-width: 639px) {
+  .movies__poster {
+    position: absolute;
+    left: 20px;
+    height: 90%;
+  }
 }
 
 .movies__btn {
   width: 40%;
   height: 30px;
+  font-size: 1.4rem;
+  border-radius: 10px;
+}
+
+@media (orientation: portrait) and (min-width: 359px) {
+  .movies__btn {
+    height: 35px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 639px) {
+  .movies__btn {
+    width: 55%;
+  }
 }
 
 .movies__stars {
@@ -689,9 +767,13 @@ body {
   font-size: 2.5rem;
   list-style: none;
   color: #f99c2d;
+  background-color: #ddd;
 }
 
-.movies__star {
-  display: block;
+@media (orientation: portrait) and (min-width: 359px) {
+  .movies__stars {
+    height: 35px;
+    font-size: 2.7rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
