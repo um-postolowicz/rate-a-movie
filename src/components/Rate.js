@@ -1,5 +1,5 @@
+import { render } from "@testing-library/react";
 import React, { useRef, useState } from "react";
-import Star from "./Star";
 import { BsStar, BsStarHalf, BsStarFill } from "react-icons/bs";
 
 const starsBasic = [
@@ -28,10 +28,10 @@ const starsBasic = [
 const Rate = () => {
   const ref = useRef(null);
   const [stars, setStars] = useState(starsBasic);
-  const [isClicked, setIsClicked] = useState(false);
+  const [renderState, setRenderState] = useState(false);
 
   const handleRate = (e) => {
-    setIsClicked(true);
+    setRenderState(!renderState);
     let table = stars;
     const clickPosition = e.clientX;
     const windowWidth = window.innerWidth;
@@ -39,6 +39,7 @@ const Rate = () => {
     const clickPositionInStarsDiv =
       clickPosition - (windowWidth - starsWidth) / 2;
     const starId = Math.ceil(clickPositionInStarsDiv / 25);
+    table.forEach((element) => (element.icon = <BsStar />));
     for (let i = 0; i < starId; i++) {
       table[i].icon = <BsStarFill />;
     }
@@ -47,38 +48,12 @@ const Rate = () => {
     console.log(stars);
     return stars;
   };
-  // const [isFill, setIsFill] = useState(false);
-
-  // const handleRateStar = (e) => {
-  //   const clickPosition = e.clientX;
-  //   const windowWidth = window.innerWidth;
-  //   const starsWidth = ref.current.offsetWidth;
-  //   const clickPositionInStarsDiv =
-  //     clickPosition - (windowWidth - starsWidth) / 2;
-  //   const starId = Math.ceil(clickPositionInStarsDiv / 25);
-  //   if (e.target.id === starId) {
-  //     setIsFill(!isFill);
-  //   }
-  // };
-
-  // const handleFill = (e) => {
-  //   // console.log(e.currentTarget.id);
-  //   const clickPosition = e.clientX;
-  //   const windowWidth = window.innerWidth;
-  //   const starsWidth = ref.current.offsetWidth;
-  //   const clickPositionInStarsDiv =
-  //     clickPosition - (windowWidth - starsWidth) / 2;
-  //   const starId = Math.ceil(clickPositionInStarsDiv / 25);
-  //   if (parseInt(e.currentTarget.id) === starId) {
-  //     setIsFill(!isFill);
-  //   }
-  // };
 
   return (
     <ul className="movies__stars" onClick={handleRate} ref={ref}>
-      {isClicked
-        ? stars.map((star) => <li key={star.id}>{star.icon}</li>)
-        : starsBasic.map((star) => <li key={star.id}>{star.icon}</li>)}
+      {stars.map((star) => (
+        <li key={star.id}>{star.icon}</li>
+      ))}
     </ul>
   );
 };
