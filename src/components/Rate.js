@@ -33,12 +33,11 @@ const Rate = () => {
     setRenderState(!renderState);
     let table = stars;
     const clickPosition = e.clientX;
-    const windowWidth = window.innerWidth;
-    const starsWidth = ref.current.offsetWidth;
-    // const width = ref.current.offsetLeft;
-    // console.log(width);
-    const clickPositionInStarsDiv =
-      clickPosition - (windowWidth - starsWidth) / 2;
+    const margin = ref.current.offsetParent.offsetLeft;
+    const starsLeft = ref.current.offsetLeft;
+    console.log(ref);
+    const clickPositionInStarsDiv = clickPosition - starsLeft - margin - 2;
+    // console.log(clickPosition, starsLeft, clickPositionInStarsDiv);
     const starId = Math.ceil(clickPositionInStarsDiv / 12.5);
     // console.log(starId);
     table.forEach((element) => (element.icon = <BsStar />));
