@@ -1,23 +1,55 @@
 .movies {
   list-style: none;
+  @include media-query(medium, $portrait) {
+    @include flexbox();
+    flex-wrap: wrap;
+  }
+  @include media-query(large, $landscape) {
+    @include flexbox();
+    flex-wrap: wrap;
+  }
+  @include media-query(xxlarge, $landscape) {
+    margin-top: 30px;
+  }
   &__container {
     position: relative;
     @include flexbox(column, space-evenly, center);
     flex-wrap: wrap;
     margin: 40px auto;
-    height: 90vh;
+    height: 85vh;
     width: 90%;
     border: $orange-color 2px solid;
+    padding: 5px;
     @include media-query(xsmall, $portrait) {
       border-width: 3px;
       width: 85%;
       height: 85vh;
     }
+    @include media-query(xsmall, $landscape) {
+      @include grid-movie-landscape(grid, 2, 4, 1fr, center);
+    }
     @include media-query(small, $landscape) {
       margin-top: 20px;
-      align-items: flex-start;
+      @include grid-movie-landscape(grid, 2, 4, 1fr, center);
+    }
+    @include media-query(medium, $portrait) {
+      flex-basis: 42%;
+      height: 55vh;
+    }
+    @include media-query(medium, $landscape) {
       width: 80%;
-      padding-left: 40%;
+    }
+    @include media-query(large, $landscape) {
+      flex-basis: 42%;
+      @include flexbox(column, space-evenly, center);
+    }
+    @include media-query(xlarge, $landscape) {
+      flex-basis: 30%;
+      height: 70vh;
+    }
+    @include media-query(xxlarge, $landscape) {
+      flex-basis: 28%;
+      height: 83vh;
     }
   }
   &__title {
@@ -29,6 +61,13 @@
     }
     @include media-query(small, $landscape) {
       font-size: 3rem;
+    }
+    @include media-query(xlarge, $landscape) {
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+    @include media-query(xxlarge, $landscape) {
+      margin-top: 10px;
     }
   }
   &__type {
@@ -59,10 +98,27 @@
     height: 60%;
     max-width: 80%;
     box-shadow: 0 0 6px 4px #ddd;
-    @include media-query(small, $landscape) {
-      position: absolute;
-      left: 20px;
+    @include media-query(xsmall, $landscape) {
       height: 90%;
+      max-width: 90%;
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+    @include media-query(small, $landscape) {
+      height: 90%;
+      max-width: 90%;
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+    @include media-query(medium, $portrait) {
+      height: 50%;
+    }
+    @include media-query(large, $landscape) {
+      height: 60%;
     }
   }
   &__btn {
@@ -82,7 +138,6 @@
     font-size: 2.5rem;
     list-style: none;
     color: darken($orange-color, 20%);
-    background-color: #ddd;
     @include media-query(xxsmall, $portrait) {
       height: $xxsmall-height;
       font-size: 2.7rem;
