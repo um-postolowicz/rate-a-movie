@@ -44,16 +44,32 @@
 }
 
 @mixin grid-movie-landscape(
-  $display,
-  $repeat-columns,
-  $repeat-rows,
-  $size,
-  $place
+  $display: grid,
+  $repeat-columns: 2,
+  $repeat-rows: 4,
+  $size: 1fr,
+  $place: center
 ) {
   display: $display;
   grid-template-columns: repeat($repeat-columns, $size);
   grid-template-rows: repeat($repeat-rows, $size);
   place-items: $place $place;
+}
+
+@mixin grid-settings(
+  $height: 90%,
+  $max-width: 90%,
+  $grid-column-start: 1,
+  $grid-column-end: 1,
+  $grid-row-start: 1,
+  $grid-row-end: 5
+) {
+  height: $height;
+  max-width: $max-width;
+  grid-column-start: $grid-column-start;
+  grid-column-end: $grid-column-end;
+  grid-row-start: $grid-row-start;
+  grid-row-end: $grid-row-end;
 }
 
 @mixin position(

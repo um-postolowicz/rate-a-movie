@@ -23,11 +23,11 @@
       height: 85vh;
     }
     @include media-query(xsmall, $landscape) {
-      @include grid-movie-landscape(grid, 2, 4, 1fr, center);
+      @include grid-movie-landscape();
     }
     @include media-query(small, $landscape) {
       margin-top: 20px;
-      @include grid-movie-landscape(grid, 2, 4, 1fr, center);
+      @include grid-movie-landscape();
     }
     @include media-query(medium, $portrait) {
       flex-basis: 42%;
@@ -97,20 +97,10 @@
     max-width: 80%;
     box-shadow: 0 0 6px 4px #ddd;
     @include media-query(xsmall, $landscape) {
-      height: 90%;
-      max-width: 90%;
-      grid-column-start: 1;
-      grid-column-end: 1;
-      grid-row-start: 1;
-      grid-row-end: 5;
+      @include grid-settings();
     }
     @include media-query(small, $landscape) {
-      height: 90%;
-      max-width: 90%;
-      grid-column-start: 1;
-      grid-column-end: 1;
-      grid-row-start: 1;
-      grid-row-end: 5;
+      @include grid-settings();
     }
     @include media-query(medium, $portrait) {
       height: 50%;
@@ -148,9 +138,9 @@
     letter-spacing: 2px;
   }
   &__rate-sent {
-    height: 30px;
+    height: $basic-height;
     text-align: center;
-    line-height: 30px;
+    line-height: $basic-height;
     font-size: 1.4rem;
     letter-spacing: 1px;
     font-weight: bold;
