@@ -130,6 +130,32 @@
       width: 55%;
     }
   }
+  &__rate-and-send {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  &__btn--rate {
+    flex-basis: 30%;
+    margin-left: 15px;
+    text-transform: uppercase;
+    background-color: white;
+    background-image: none;
+    border: 3px solid darken($orange-color, 10%);
+    color: darken($orange-color, 10%);
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  &__rate-sent {
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: darken($orange-color, 15%);
+  }
   &__stars {
     display: flex;
     height: $basic-height;

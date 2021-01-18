@@ -26,8 +26,9 @@ const starsBasic = [
 
 const Rate = () => {
   const ref = useRef(null);
-  const [stars, setStars] = useState(starsBasic);
+  const [isRateSent, setIsRateSent] = useState(false);
   const [renderState, setRenderState] = useState(false);
+  const [stars, setStars] = useState(starsBasic);
 
   const handleRate = (e) => {
     setRenderState(!renderState);
@@ -37,9 +38,7 @@ const Rate = () => {
     const starsLeft = ref.current.offsetLeft;
     console.log(ref);
     const clickPositionInStarsDiv = clickPosition - starsLeft - margin - 2;
-    // console.log(clickPosition, starsLeft, clickPositionInStarsDiv);
     const starId = Math.ceil(clickPositionInStarsDiv / 12.5);
-    // console.log(starId);
     table.forEach((element) => (element.icon = <BsStar />));
     for (let i = 0; i < starId / 2; i++) {
       table[i].icon = <BsStarFill />;
@@ -53,12 +52,31 @@ const Rate = () => {
     return stars;
   };
 
+  const sendRate = (e) => {
+    e.preventDefault();
+    setIsRateSent(true);
+  };
+
   return (
-    <ul className="movies__stars" onClick={handleRate} ref={ref}>
-      {stars.map((star) => (
-        <li key={star.id}>{star.icon}</li>
-      ))}
-    </ul>
+    <>
+      {isRateSent ? (
+        <p className="movies__rate-sent">Thank you for your rate!</p>
+      ) : (
+        <div className="movies__rate-and-send">
+          <ul className="movies__stars" onClick={handleRate} ref={ref}>
+            {stars.map((star) => (
+              <li key={star.id}>{star.icon}</li>
+            ))}
+          </ul>
+          <button
+            className="movies__btn btn movies__btn--rate"
+            onClick={sendRate}
+          >
+            Send
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 
