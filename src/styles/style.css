@@ -666,12 +666,6 @@ body {
   }
 }
 
-@media (orientation: landscape) and (min-width: 1439px) {
-  .movies {
-    margin-top: 30px;
-  }
-}
-
 .movies__container {
   position: relative;
   display: -webkit-box;
@@ -776,6 +770,7 @@ body {
     -ms-flex-preferred-size: 28%;
         flex-basis: 28%;
     height: 83vh;
+    margin-top: 30px;
   }
 }
 

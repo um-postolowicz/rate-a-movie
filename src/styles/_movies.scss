@@ -8,9 +8,6 @@
     @include flexbox();
     flex-wrap: wrap;
   }
-  @include media-query(xxlarge, $landscape) {
-    margin-top: 30px;
-  }
   &__container {
     position: relative;
     @include flexbox(column, space-evenly, center);
@@ -50,6 +47,7 @@
     @include media-query(xxlarge, $landscape) {
       flex-basis: 28%;
       height: 83vh;
+      margin-top: 30px;
     }
   }
   &__title {
