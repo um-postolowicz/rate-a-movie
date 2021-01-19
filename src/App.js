@@ -5,7 +5,6 @@ import "./styles/style.css";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import Routing from "./components/Routing";
-import StartPage from "./pages/StartPage";
 
 const API_KEY = "2fc6065a";
 const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
@@ -42,7 +41,8 @@ function App() {
   return (
     <Router>
       <div className="wrapper">
-        <StartPage
+        <Header />
+        <Search
           handleInput={handleInput}
           handleSearch={handleSearch}
           inputValue={inputValue}
