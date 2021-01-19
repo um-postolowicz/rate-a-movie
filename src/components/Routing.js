@@ -1,15 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Details from "../pages/Details";
-import MoviesList from "../pages/MoviesList";
+import MainPage from "../pages/MainPage";
 
-const Routing = ({ movies }) => {
+const Routing = () => {
   return (
     <>
       <Switch>
-        <Route path="/" exact>
-          <MoviesList movies={movies} />
-        </Route>
+        <Route path="/" component={MainPage} />
         <Route path="/details" component={Details} />
       </Switch>
     </>
