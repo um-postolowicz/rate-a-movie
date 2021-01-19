@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./styles/style.css";
-import Details from "./components/Details";
 import Header from "./components/Header";
 import Search from "./components/Search";
-import MoviesList from "./components/MoviesList";
 import Routing from "./components/Routing";
+import StartPage from "./pages/StartPage";
 
 const API_KEY = "2fc6065a";
 const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;

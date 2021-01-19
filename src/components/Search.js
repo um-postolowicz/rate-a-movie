@@ -11,9 +11,9 @@ const Search = ({ handleInput, handleSearch, inputValue }) => {
         type="text"
         value={inputValue}
       />
-      <button className="search__btn btn" type="submit">
+      <Link className="search__btn btn" onClick={handleSearch} to="/movies">
         Search
-      </button>
+      </Link>
     </form>
   );
 };
