@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./styles/style.css";
+import Details from "./components/Details";
 import Header from "./components/Header";
-import Movie from "./components/Movie";
 import Search from "./components/Search";
+import MoviesList from "./components/MoviesList";
+import Routing from "./components/Routing";
 
 const API_KEY = "2fc6065a";
 const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
@@ -38,7 +41,7 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <div className="wrapper">
         <Header />
         <Search
@@ -46,21 +49,11 @@ function App() {
           handleSearch={handleSearch}
           inputValue={inputValue}
         />
-        <ul className="movies">
-          {movies.map((movie) =>
-            movie.Type === "movie" || "series" ? (
-              <Movie
-                key={movie.imdbID}
-                poster={movie.Poster}
-                title={movie.Title}
-                type={movie.Type}
-                year={movie.Year}
-              />
-            ) : null
-          )}
-        </ul>
+        <main>
+          <Routing movies={movies} />
+        </main>
       </div>
-    </>
+    </Router>
   );
 }
 

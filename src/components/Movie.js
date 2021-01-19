@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Rate from "./Rate";
 import noPoster from "../images/no-poster.svg";
 
@@ -29,7 +30,9 @@ const Movie = ({ poster, title, type, year }) => {
         ref={ref}
         src={poster}
       />
-      <button className="movies__btn btn">See details</button>
+      <Link className="movies__btn btn" to="/details">
+        See details
+      </Link>
       {showRate ? (
         <Rate />
       ) : (
