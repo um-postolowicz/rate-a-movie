@@ -7,7 +7,7 @@ const Routing = ({ movies }) => {
   return (
     <>
       <Switch>
-        <Route path="/movies">
+        <Route path="/">
           <MoviesList movies={movies} />
         </Route>
         <Route path="/details" component={Details} />

@@ -42,8 +42,7 @@ function App() {
   return (
     <Router>
       <div className="wrapper">
-        <Header />
-        <Search
+        <StartPage
           handleInput={handleInput}
           handleSearch={handleSearch}
           inputValue={inputValue}
