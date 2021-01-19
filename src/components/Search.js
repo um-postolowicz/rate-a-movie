@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Search = ({ handleInput, handleSearch, inputValue }) => {
   return (
@@ -11,9 +10,9 @@ const Search = ({ handleInput, handleSearch, inputValue }) => {
         type="text"
         value={inputValue}
       />
-      <Link className="search__btn btn" onClick={handleSearch} to="/movies">
+      <button className="search__btn btn" onClick={handleSearch} type="submit">
         Search
-      </Link>
+      </button>
     </form>
   );
 };

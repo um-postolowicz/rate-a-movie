@@ -30,7 +30,13 @@ const Movie = ({ poster, title, type, year }) => {
         ref={ref}
         src={poster}
       />
-      <Link className="movies__btn btn" to="/details">
+      <Link
+        className="movies__btn btn"
+        onClick={() => {
+          window.location.href = "/details";
+        }}
+        to="/details"
+      >
         See details
       </Link>
       {showRate ? (
