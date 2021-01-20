@@ -36,6 +36,7 @@ const MainPage = () => {
     setInputValue("");
     scrollAfterSearch();
   };
+
   return (
     <Router>
       <div className="wrapper">
