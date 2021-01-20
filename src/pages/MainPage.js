@@ -10,6 +10,7 @@ const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
 
 const MainPage = () => {
   const [inputValue, setInputValue] = useState("");
+  const [isSearch, setIsSearch] = useState(false);
   const [movies, setMovies] = useState([]);
 
   const handleInput = (e) => {
@@ -35,6 +36,7 @@ const MainPage = () => {
       .catch((error) => console.log(`Błąd: ${error}`));
     setInputValue("");
     scrollAfterSearch();
+    setIsSearch(true);
   };
 
   return (
@@ -47,7 +49,7 @@ const MainPage = () => {
           inputValue={inputValue}
         />
         <main>
-          <MoviesList movies={movies} />
+          <MoviesList isSearch={isSearch} movies={movies} />
         </main>
       </div>
     </Router>
