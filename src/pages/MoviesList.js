@@ -19,18 +19,27 @@ import Movie from "../components/Movie";
 
 const MoviesList = (props) => {
   const { movies } = props;
+  const [isChanged, setIsChanged] = useState(false);
   const [moviesList, setMoviesList] = useState("");
 
   const ref = useRef(null);
 
   const handleSelect = () => {
+    setIsChanged(!isChanged);
     const select = ref.current;
     const selected = select.options[select.selectedIndex].value;
-    const moviesSort = movies;
-    if (selected === "year-up") {
+    let moviesSort = movies;
+    if (selected === "title-up") {
+      moviesSort.sort((a, b) => (a.Title > b.Title ? 1 : -1));
+    } else if (selected === "title-down") {
+      moviesSort.sort((a, b) => (b.Title > a.Title ? 1 : -1));
+    } else if (selected === "year-up") {
       moviesSort.sort((a, b) => (a.Year > b.Year ? 1 : -1));
-      setMoviesList(moviesSort);
+    } else if (selected === "year-down") {
+      moviesSort.sort((a, b) => (b.Year > a.Year ? 1 : -1));
     }
+    setMoviesList(moviesSort);
+    console.log(movies);
   };
 
   return (
@@ -46,6 +55,7 @@ const MoviesList = (props) => {
           onChange={handleSelect}
           ref={ref}
         >
+          <option value="default">Select...</option>
           <option value="title-up">Title of the movie (ascending)</option>
           <option value="title-down">Title of the movie (descending)</option>
           <option value="year-up">Year of the production (ascending)</option>
