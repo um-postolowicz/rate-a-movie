@@ -1,4 +1,5 @@
 .search {
+  z-index: 3;
   @include position($top: 75vh, $height: 20vh);
   @include flexbox();
   @include media-query(xxsmall, $portrait) {

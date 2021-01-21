@@ -44,13 +44,12 @@
 }
 
 @mixin grid-movie-landscape(
-  $display: grid,
   $repeat-columns: 2,
   $repeat-rows: 4,
   $size: 1fr,
   $place: center
 ) {
-  display: $display;
+  display: grid;
   grid-template-columns: repeat($repeat-columns, $size);
   grid-template-rows: repeat($repeat-rows, $size);
   place-items: $place $place;
