@@ -50,13 +50,14 @@ const MainPage = () => {
           handleSearch={handleSearch}
           inputValue={inputValue}
         />
-        <SearchBar
-          handleInput={handleInput}
-          handleSearch={handleSearch}
-          inputValue={inputValue}
-        />
         <main>
-          <MoviesList isSearch={isSearch} movies={movies} />
+          <MoviesList
+            handleInput={handleInput}
+            handleSearch={handleSearch}
+            inputValue={inputValue}
+            isSearch={isSearch}
+            movies={movies}
+          />
         </main>
       </div>
     </Router>

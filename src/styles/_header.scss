@@ -2,6 +2,7 @@
   position: relative;
   height: 100vh;
   background-image: url($header-img-small);
+  z-index: 6;
   @include media-query(small, $portrait) {
     background-image: url($header-img-medium);
   }

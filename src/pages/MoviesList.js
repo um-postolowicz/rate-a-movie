@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Movie from "../components/Movie";
+import SearchBar from "../components/SearchBar";
 
 const MoviesList = (props) => {
   const { movies } = props;
@@ -28,26 +29,37 @@ const MoviesList = (props) => {
   return (
     <>
       {props.isSearch && (
-        <form className="select__container">
-          <label className="select__title" htmlFor="select">
-            Sort by:
-          </label>
-          <select
-            name="select"
-            id="select"
-            className="select__list"
-            onChange={handleSelect}
-            ref={ref}
-          >
-            <option value="default">Select...</option>
-            <option value="title-up">Title of the movie (ascending)</option>
-            <option value="title-down">Title of the movie (descending)</option>
-            <option value="year-up">Year of the production (ascending)</option>
-            <option value="year-down">
-              Year of the production (descending)
-            </option>
-          </select>
-        </form>
+        <>
+          <SearchBar
+            handleInput={props.handleInput}
+            handleSearch={props.handleSearch}
+            inputValue={props.inputValue}
+          />
+          <form className="select__container">
+            <label className="select__title" htmlFor="select">
+              Sort by:
+            </label>
+            <select
+              name="select"
+              id="select"
+              className="select__list"
+              onChange={handleSelect}
+              ref={ref}
+            >
+              <option value="default">Select...</option>
+              <option value="title-up">Title of the movie (ascending)</option>
+              <option value="title-down">
+                Title of the movie (descending)
+              </option>
+              <option value="year-up">
+                Year of the production (ascending)
+              </option>
+              <option value="year-down">
+                Year of the production (descending)
+              </option>
+            </select>
+          </form>
+        </>
       )}
       <ul className="movies">
         {moviesList
