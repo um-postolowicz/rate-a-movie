@@ -1,0 +1,31 @@
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  box-shadow: 0 0 6px 10px #ddd;
+  &__logo {
+    flex-basis: 25%;
+    margin-left: 10px;
+    font-family: "Bungee Outline", cursive;
+    font-size: 2.3rem;
+    color: $pink-color;
+    text-shadow: 0 0 4px #ddd;
+    text-align: center;
+  }
+  & .search {
+    position: inherit;
+    height: 100%;
+    flex-basis: 75%;
+    &__input {
+      @include input-button-style(25px, 1.2rem, $input-border-half);
+      &::placeholder {
+        font-size: 1.2rem;
+      }
+    }
+    &__btn {
+      font-size: 1.2rem;
+      @include input-button-style(25px, 1.2rem, $btn-border-half);
+    }
+  }
+}

@@ -1111,4 +1111,66 @@ a {
     font-size: 2.7rem;
   }
 }
+
+.search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+  -webkit-box-shadow: 0 0 6px 10px #ddd;
+          box-shadow: 0 0 6px 10px #ddd;
+}
+
+.search-bar__logo {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  margin-left: 10px;
+  font-family: "Bungee Outline", cursive;
+  font-size: 2.3rem;
+  color: #d57eeb;
+  text-shadow: 0 0 4px #ddd;
+  text-align: center;
+}
+
+.search-bar .search {
+  position: inherit;
+  height: 100%;
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+}
+
+.search-bar .search__input {
+  height: 25px;
+  font-size: 1.2rem;
+  border-radius: 10px 0 0 10px;
+}
+
+.search-bar .search__input::-webkit-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.search-bar .search__input:-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.search-bar .search__input::-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.search-bar .search__input::placeholder {
+  font-size: 1.2rem;
+}
+
+.search-bar .search__btn {
+  font-size: 1.2rem;
+  height: 25px;
+  font-size: 1.2rem;
+  border-radius: 0 10px 10px 0;
+}
 /*# sourceMappingURL=style.css.map */
