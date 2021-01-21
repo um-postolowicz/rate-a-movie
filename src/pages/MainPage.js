@@ -4,7 +4,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Header from "../components/Header";
 import MoviesList from "../pages/MoviesList";
 import Search from "../components/Search";
-import SearchBar from "../components/SearchBar";
 
 const API_KEY = "2fc6065a";
 const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
