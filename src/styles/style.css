@@ -630,16 +630,32 @@ a {
 }
 
 .select__container {
-  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 75%;
   margin: 20px auto 0;
 }
 
 .select__title {
-  display: block;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   text-align: center;
-  margin: 0 auto 10px;
+  margin-bottom: 10px;
   font-weight: bold;
+}
+
+.select__list {
+  height: 30px;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+.select__list:focus {
+  outline: none;
 }
 
 .movies {

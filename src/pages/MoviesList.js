@@ -1,21 +1,5 @@
 import React, { useRef, useState } from "react";
 import Movie from "../components/Movie";
-// import Select from "react-select";
-
-// const customStyles = {
-//   option: (provided, state) => ({
-//     ...provided,
-//     backgroundColor: state.isSelected ? "#d57eeb" : "transparent",
-//     color: state.isSelected ? "white" : "black",
-//     fontSize: "1.2rem",
-//     padding: 20,
-//   }),
-// };
-
-// const options = [
-//   { value: "title", label: "Title of the movie" },
-//   { value: "year", label: "Year of production" },
-// ];
 
 const MoviesList = (props) => {
   const { movies } = props;
@@ -39,7 +23,6 @@ const MoviesList = (props) => {
       moviesSort.sort((a, b) => (b.Year > a.Year ? 1 : -1));
     }
     setMoviesList(moviesSort);
-    console.log(movies);
   };
 
   return (
@@ -64,18 +47,6 @@ const MoviesList = (props) => {
               Year of the production (descending)
             </option>
           </select>
-          {/* <Select
-          options={options}
-          styles={customStyles}
-          theme={(theme) => ({
-            ...theme,
-            borderRadius: 7,
-            colors: {
-              ...theme.colors,
-              primary: `#d57eeb`,
-            },
-          })}
-        /> */}
         </form>
       )}
       <ul className="movies">
