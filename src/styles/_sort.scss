@@ -1,15 +1,48 @@
 .select {
   &__container {
+    @include flexbox(column, center, center);
     display: flex;
     flex-direction: column;
     width: 75%;
     margin: 20px auto 0;
+    @include media-query(small, $landscape) {
+      flex-direction: row;
+    }
+    @include media-query(medium, $landscape) {
+      flex-direction: row;
+    }
+    @include media-query(medium, $portrait) {
+      flex-direction: row;
+    }
+    @include media-query(large, $landscape) {
+      width: 60%;
+    }
+    @include media-query(large, $portrait) {
+      width: 60%;
+    }
+    @include media-query(xlarge, $landscape) {
+      width: 40%;
+    }
   }
   &__title {
     font-size: 1.4rem;
-    text-align: center;
     margin-bottom: 10px;
     font-weight: bold;
+    @include media-query(small, $landscape) {
+      margin: 20px 0;
+    }
+    @include media-query(medium, $landscape) {
+      margin: 20px 0;
+    }
+    @include media-query(medium, $portrait) {
+      margin: 20px 0 10px;
+    }
+    @include media-query(large, $landscape) {
+      font-size: 1.6rem;
+    }
+    @include media-query(large, $portrait) {
+      font-size: 1.6rem;
+    }
   }
   &__list {
     height: $basic-height;
@@ -17,6 +50,24 @@
     width: 100%;
     &:focus {
       outline: none;
+    }
+    @include media-query(small, $landscape) {
+      width: 70%;
+      margin: 20px 0 20px 20px;
+    }
+    @include media-query(medium, $landscape) {
+      width: 70%;
+      margin: 20px 0 20px 30px;
+    }
+    @include media-query(medium, $portrait) {
+      width: 70%;
+      margin: 20px 0 10px 30px;
+    }
+    @include media-query(large, $landscape) {
+      font-size: 1.6rem;
+    }
+    @include media-query(large, $portrait) {
+      font-size: 1.6rem;
     }
   }
 }
