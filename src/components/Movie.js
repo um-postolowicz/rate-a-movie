@@ -1,10 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Rate from "./Rate";
 import noPoster from "../images/no-poster.svg";
 
-const Movie = ({ poster, title, type, year }) => {
+// const API_KEY = "2fc6065a";
+// const DETAIL_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&t=`;
+
+const Movie = ({ index, poster, title, type, year }) => {
   const [showRate, setShowRate] = useState(false);
+
   const ref = useRef(null);
 
   useEffect(() => {
@@ -30,15 +34,9 @@ const Movie = ({ poster, title, type, year }) => {
         ref={ref}
         src={poster}
       />
-      <Link
-        className="movies__btn btn"
-        onClick={() => {
-          window.location.href = "/details";
-        }}
-        to="/details"
-      >
+      <NavLink className="movies__btn btn" to={`/${index}`}>
         See details
-      </Link>
+      </NavLink>
       {showRate ? (
         <Rate />
       ) : (

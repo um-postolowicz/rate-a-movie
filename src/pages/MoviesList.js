@@ -67,6 +67,7 @@ const MoviesList = (props) => {
               movie.Type === "movie" || "series" ? (
                 <Movie
                   key={movie.imdbID}
+                  index={movie.imdbID}
                   poster={movie.Poster}
                   title={movie.Title}
                   type={movie.Type}
@@ -78,6 +79,7 @@ const MoviesList = (props) => {
               movie.Type === "movie" || "series" ? (
                 <Movie
                   key={movie.imdbID}
+                  index={movie.imdbID}
                   poster={movie.Poster}
                   title={movie.Title}
                   type={movie.Type}
