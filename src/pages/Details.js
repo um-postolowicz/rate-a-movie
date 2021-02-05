@@ -52,21 +52,37 @@ const Details = () => {
             <p className="movie__description">{Plot}</p>
             <div className="movie__information">
               <h2 className="movie__info-title">Info:</h2>
-              <p className="movie__genre">Genre: {Genre}</p>
-              <p className="movie__country">Country: {Country}</p>
-              <p className="movie__director">Director: {Director}</p>
-              <p className="movie__date">Date of release: {Released}</p>
-              <p className="movie__writers">Writers: {Writer}</p>
-              <p className="movie__actors">Actors: {Actors}</p>
-              <p className="movie__runtime">Runtime: {Runtime}</p>
-              <p className="movie__awards">Awards: {Awards}</p>
+              <p className="movie__genre">
+                Genre: <span>{Genre}</span>
+              </p>
+              <p className="movie__country">
+                Country: <span>{Country}</span>
+              </p>
+              <p className="movie__director">
+                Director: <span>{Director}</span>
+              </p>
+              <p className="movie__date">
+                Date of release: <span>{Released}</span>
+              </p>
+              <p className="movie__writers">
+                Writers: <span>{Writer}</span>
+              </p>
+              <p className="movie__actors">
+                Actors: <span>{Actors}</span>
+              </p>
+              <p className="movie__runtime">
+                Runtime: <span>{Runtime}</span>
+              </p>
+              <p className="movie__awards">
+                Awards: <span>{Awards}</span>
+              </p>
             </div>
             <div className="movie__rates">
               <h2 className="movie__rate-title">Rates:</h2>
               {Ratings ? (
                 Ratings.map((rating) => (
-                  <p className="movie__other-rate">
-                    {rating.Source}: {rating.Value}
+                  <p className="movie__other-rate" key={rating.Source}>
+                    {rating.Source}: <span>{rating.Value}</span>
                   </p>
                 ))
               ) : (

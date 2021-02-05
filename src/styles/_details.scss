@@ -1,0 +1,42 @@
+.movie {
+  @include flexbox(column);
+  width: 85vw;
+  margin: 30px auto 20px;
+  padding: 0 15px 15px;
+  border: 2px solid $pink-color;
+  &__title {
+    font-size: 2.5rem;
+    margin: -15px 0 5px;
+    background-color: white;
+    padding: 0 5px;
+    color: $pink-color;
+  }
+  &__type {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  &__poster {
+    width: 70%;
+    box-shadow: 0 0 6px 3px #ddd;
+  }
+  &__description {
+    margin: 10px 0 10px;
+    font-size: 1.3rem;
+    text-align: justify;
+    font-weight: bold;
+  }
+  &__information,
+  &__rates {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    p {
+      margin-top: 7px;
+    }
+  }
+  span {
+    font-weight: bold;
+    color: darken($orange-color, 20%);
+  }
+}
