@@ -10,8 +10,8 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" component={MainPage} exact />
-        <Route path="/:searchValue" component={MoviesList} />
-        {/* <Route path="/:searchValue/:id" component={Details} /> */}
+        <Route path="/:searchValue" component={MoviesList} exact />
+        <Route path="/:searchValue/:id" component={Details} />
       </Switch>
     </Router>
   );

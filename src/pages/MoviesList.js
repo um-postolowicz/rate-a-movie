@@ -8,7 +8,7 @@ import SearchBar from "../components/SearchBar";
 const API_KEY = "2fc6065a";
 const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
 
-const MoviesList = (props) => {
+const MoviesList = () => {
   const searchValue = window.location.pathname.substring(1);
 
   const [movies, setMovies] = useState([]);
@@ -98,6 +98,7 @@ const MoviesList = (props) => {
                   key={movie.imdbID}
                   index={movie.imdbID}
                   poster={movie.Poster}
+                  searchValue={searchValue}
                   title={movie.Title}
                   type={movie.Type}
                   year={movie.Year}
@@ -110,6 +111,7 @@ const MoviesList = (props) => {
                   key={movie.imdbID}
                   index={movie.imdbID}
                   poster={movie.Poster}
+                  searchValue={searchValue}
                   title={movie.Title}
                   type={movie.Type}
                   year={movie.Year}
