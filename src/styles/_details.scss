@@ -1,14 +1,31 @@
+.back {
+  @include flexbox();
+  margin: 20px auto 10px;
+  padding: 7px;
+  background-color: darken($orange-color, 10%);
+  border: 2px solid darken($orange-color, 10%);
+  border-radius: 25px;
+  font-size: 1.4rem;
+  color: white;
+  font-weight: bold;
+  &__icon {
+    padding-right: 7px;
+    font-size: 2.5rem;
+  }
+}
 .movie {
   @include flexbox(column);
   width: 85vw;
   margin: 30px auto 20px;
   padding: 0 15px 15px;
   border: 2px solid $pink-color;
+  background-color: lighten($pink-color, 26%);
   &__title {
     font-size: 2.5rem;
     margin: -15px 0 5px;
-    background-color: white;
     padding: 0 5px;
+    background-color: white;
+    border-radius: $border-radius;
     color: $pink-color;
   }
   &__type {

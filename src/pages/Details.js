@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { FaArrowCircleLeft } from "react-icons/fa";
 import noPoster from "../images/no-poster.svg";
 
 const API_KEY = "2fc6065a";
@@ -6,6 +8,7 @@ const DETAIL_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&i=`;
 
 const Details = () => {
   const [movieDetails, setMovieDetails] = useState([]);
+  const history = useHistory();
   const {
     Actors,
     Awards,
@@ -41,6 +44,10 @@ const Details = () => {
     <>
       {movieDetails ? (
         <>
+          <button className="back" onClick={() => history.goBack()}>
+            <FaArrowCircleLeft className="back__icon" />
+            <p className="back__text">Go Back to Movies List</p>
+          </button>
           <div className="movie">
             <h1 className="movie__title">{Title}</h1>
             <p className="movie__type">{Type}</p>
