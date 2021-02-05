@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 import Header from "../components/Header";
 import Movie from "../components/Movie";
@@ -9,7 +10,7 @@ const API_KEY = "2fc6065a";
 const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
 
 const MoviesList = () => {
-  const searchValue = window.location.pathname.substring(1);
+  let { searchValue } = useParams();
 
   const [movies, setMovies] = useState([]);
   const [isChanged, setIsChanged] = useState(false);
