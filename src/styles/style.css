@@ -1489,13 +1489,25 @@ a {
   font-weight: bold;
 }
 
-.movie__information, .movie__rates {
+.movie__user-rate-title {
+  margin-bottom: 6px;
+}
+
+.movie__user-rate button {
+  width: 60px;
+  background-color: #fbb45e;
+  border: 2px solid #fbb45e;
+  color: white;
+  border-radius: 15px;
+}
+
+.movie__information, .movie__rates, .movie__user-rate {
   margin-top: 10px;
   font-size: 1.2rem;
   text-align: center;
 }
 
-.movie__information p, .movie__rates p {
+.movie__information p, .movie__rates p, .movie__user-rate p {
   margin-top: 7px;
 }
 

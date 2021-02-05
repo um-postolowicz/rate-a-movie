@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 import noPoster from "../images/no-poster.svg";
+import Rate from "../components/Rate";
 
 const API_KEY = "2fc6065a";
 const DETAIL_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&i=`;
@@ -28,7 +29,7 @@ const Details = () => {
   } = movieDetails;
 
   useEffect(() => {
-    console.log(id);
+    scroll.scrollTo(0);
     setMovieDetails([]);
     fetch(DETAIL_API_URL + id)
       .then((response) => {
@@ -40,7 +41,6 @@ const Details = () => {
       })
       .then((response) => setMovieDetails(response))
       .catch((error) => console.log(error));
-    scroll.scrollTo(0);
   }, [id]);
 
   return (
@@ -60,6 +60,10 @@ const Details = () => {
               src={Poster ? Poster : noPoster}
             />
             <p className="movie__description">{Plot}</p>
+            <div className="movie__user-rate">
+              <h2 className="movie__user-rate-title">Rate it:</h2>
+              <Rate />
+            </div>
             <div className="movie__information">
               <h2 className="movie__info-title">Info:</h2>
               <p className="movie__genre">

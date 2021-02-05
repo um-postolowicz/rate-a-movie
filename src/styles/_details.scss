@@ -43,8 +43,21 @@
     text-align: justify;
     font-weight: bold;
   }
+  &__user-rate-title {
+    margin-bottom: 6px;
+  }
+  &__user-rate {
+    button {
+      width: 60px;
+      background-color: darken($orange-color, 10%);
+      border: 2px solid darken($orange-color, 10%);
+      color: white;
+      border-radius: 15px;
+    }
+  }
   &__information,
-  &__rates {
+  &__rates,
+  &__user-rate {
     margin-top: 10px;
     font-size: 1.2rem;
     text-align: center;
