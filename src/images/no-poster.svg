@@ -1,49 +1,20 @@
-<?xml version="1.0"?>
-<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg5273" viewBox="0 0 228.63 339.29" version="1.1">
-  <title id="title6146">Affiche</title>
-  <g id="layer1" stroke-linejoin="round" transform="translate(-290.83 -375.93)" stroke-dashoffset="3.003" stroke="#000" stroke-linecap="round" stroke-width="2" fill="#fff">
-    <path id="path5804" d="m344.42 713.71c-7.4616 2.1526-12.06-2.9995-5.8793-7.668l24.2-20.947c7.1683-70.117 9.8295-125.16 11.303-195.27-37.614 83.379-64.932 65.072 0-53.389l45.235-0.18322c74.575 103.9 37.286 149.06 3.5697 42.635 5.7932 71.897 7.502 131.24 18.961 203.14l21.08 18.452c5.421 5.1417 4.5935 7.9403-1.3727 8.8118l-44.763-6.9757-15.574-124.62-15.391 126.75z"/>
-    <path id="path5806" d="m424.91 413.82c-1.4028 11.312-7.3575 22.865-18.844 28.575-8.203 3.8423-19.607 0.88835-24.658-6.2328-8.0108-9.5475-9.0898-22.102-6.7734-33.188 2.2534-9.9514 8.2934-19.838 18.73-24.613 7.3362-2.9977 17.071-1.2207 22.3 4.6205 8.5907 8.3354 10.471 20.266 9.2454 30.839z"/>
-    <path id="path5808" d="m291.83 458.85 11.299 138.39c69.35-2.939 114.44-5.8779 208.62-8.8169l6.715-148.89z"/>
-    <path id="path5810" d="m316.66 457.39c11.203-17.214 25.849-10.031 30.424-1.0972l-4.3463 16.785c-3.2632 4.2968-12.055 7.9536-18.317 1.0438z"/>
-    <path id="path5812" d="m463.05 445.67c0.39734-10.219 14.555-15.145 27.63-2.1047l-7.1404 16.575c-5.7825 7.4454-10.662 6.4447-15.833 1.3154-2.8978-6.276-4.6568-8.9755-4.6568-15.785z"/>
+<svg width="228.63" height="339.29" xmlns="http://www.w3.org/2000/svg">
+ <title>Affiche</title>
+
+ <metadata>image/svg+xmlOpenclipartAffiche / Poster2011-03-06T19:46:43Poster, clip art, clipart, line art, presentation, school,http://openclipart.org/detail/125899/affiche--poster-by-lmproulxlmproulxPosterclip artclipartline artpresentationschool</metadata>
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="230.63" height="341.29" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1" stroke-linejoin="round" stroke-dashoffset="3.003" stroke="#000" stroke-linecap="round" stroke-width="2" fill="#fff">
+   <path id="path5804" d="m53.59001,337.78001c-7.4616,2.1526 -12.06,-2.9995 -5.8793,-7.668l24.2,-20.947c7.1683,-70.117 9.8295,-125.16 11.303,-195.27c-37.614,83.379 -64.932,65.072 0,-53.389l45.235,-0.18322c74.575,103.9 37.286,149.06 3.5697,42.635c5.7932,71.897 7.502,131.24 18.961,203.14l21.08,18.452c5.421,5.1417 4.5935,7.9403 -1.3727,8.8118l-44.763,-6.9757l-15.574,-124.62l-15.391,126.75l-41.3687,9.26412z"/>
+   <path id="path5806" d="m134.08001,37.89001c-1.4028,11.312 -7.3575,22.865 -18.844,28.575c-8.203,3.8423 -19.607,0.88835 -24.658,-6.2328c-8.0108,-9.5475 -9.0898,-22.102 -6.7734,-33.188c2.2534,-9.9514 8.2934,-19.838 18.73,-24.613c7.3362,-2.9977 17.071,-1.2207 22.3,4.6205c8.5907,8.3354 10.471,20.266 9.2454,30.839l0,-0.0007z"/>
+   <path id="path5808" d="m1.00001,82.92001l11.299,138.39c69.35,-2.939 114.44,-5.8779 208.62,-8.8169l6.715,-148.89l-226.634,19.3169z"/>
+   <path id="path5810" d="m25.83001,81.46001c11.203,-17.214 25.849,-10.031 30.424,-1.0972l-4.3463,16.785c-3.2632,4.2968 -12.055,7.9536 -18.317,1.0438l-7.7607,-16.7316z"/>
+   <path id="path5812" d="m172.22001,69.74001c0.39734,-10.219 14.555,-15.145 27.63,-2.1047l-7.1404,16.575c-5.7825,7.4454 -10.662,6.4447 -15.833,1.3154c-2.8978,-6.276 -4.6568,-8.9755 -4.6568,-15.785l0.0002,-0.0007z"/>
   </g>
-  <metadata>
-    <rdf:RDF>
-      <cc:Work>
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
-        <dc:publisher>
-          <cc:Agent rdf:about="http://openclipart.org/">
-            <dc:title>Openclipart</dc:title>
-          </cc:Agent>
-        </dc:publisher>
-        <dc:title>Affiche / Poster</dc:title>
-        <dc:date>2011-03-06T19:46:43</dc:date>
-        <dc:description>Poster, clip art, clipart, line art, presentation, school, </dc:description>
-        <dc:source>http://openclipart.org/detail/125899/affiche--poster-by-lmproulx</dc:source>
-        <dc:creator>
-          <cc:Agent>
-            <dc:title>lmproulx</dc:title>
-          </cc:Agent>
-        </dc:creator>
-        <dc:subject>
-          <rdf:Bag>
-            <rdf:li>Poster</rdf:li>
-            <rdf:li>clip art</rdf:li>
-            <rdf:li>clipart</rdf:li>
-            <rdf:li>line art</rdf:li>
-            <rdf:li>presentation</rdf:li>
-            <rdf:li>school</rdf:li>
-          </rdf:Bag>
-        </dc:subject>
-      </cc:Work>
-      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
-        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
-        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
-        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
-      </cc:License>
-    </rdf:RDF>
-  </metadata>
+  <text fill="#000000" stroke-width="0" x="14.8502" y="151.69501" id="svg_1" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve" transform="matrix(0.9659943626256701,0,0,1,0.45657076228431115,0) " stroke="#000" font-weight="normal" font-style="normal">No poster avaliable</text>
+ </g>
 </svg>

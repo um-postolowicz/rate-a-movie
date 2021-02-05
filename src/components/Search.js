@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = ({ handleInput, handleSearch, inputValue }) => {
+const Search = ({ handleInput, handleSearch, inputValue, isDetailPage }) => {
   return (
     <form className="search" onSubmit={handleSearch}>
       <input

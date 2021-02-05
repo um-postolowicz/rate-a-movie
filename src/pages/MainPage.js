@@ -24,6 +24,7 @@ const MainPage = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     setMovies([]);
+    if (!inputValue) return;
     fetch(BASE_API_URL + `"${inputValue}"`)
       .then((response) => {
         if (response.ok) {

@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
 
-const SearchBar = ({ handleInput, handleSearch, inputValue }) => {
+const SearchBar = ({ handleInput, handleSearch, inputValue, isDetailPage }) => {
   return (
     <>
       <div className="search-bar">
@@ -11,6 +11,7 @@ const SearchBar = ({ handleInput, handleSearch, inputValue }) => {
             handleInput={handleInput}
             handleSearch={handleSearch}
             inputValue={inputValue}
+            isDetailPage={isDetailPage}
           />
         </div>
       </div>
