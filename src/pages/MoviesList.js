@@ -1,13 +1,44 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { animateScroll as scroll } from "react-scroll";
+import Header from "../components/Header";
 import Movie from "../components/Movie";
+import Search from "../components/Search";
 import SearchBar from "../components/SearchBar";
 
+const API_KEY = "2fc6065a";
+const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
+
 const MoviesList = (props) => {
-  const { movies } = props;
+  const searchValue = window.location.pathname.substring(1);
+
+  const [movies, setMovies] = useState([]);
   const [isChanged, setIsChanged] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
   const [moviesList, setMoviesList] = useState("");
 
   const ref = useRef(null);
+
+  const scrollAfterSearch = () => {
+    const scrollHeight = window.innerHeight;
+    scroll.scrollTo(scrollHeight);
+  };
+
+  useEffect(() => {
+    setMovies([]);
+    if (!searchValue) return;
+    fetch(BASE_API_URL + `"${searchValue}"`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(`Http error: ${response.status}`);
+        }
+      })
+      .then((response) => setMovies(response.Search))
+      .catch((error) => console.log(error));
+    scrollAfterSearch();
+    setIsSearch(true);
+  }, [searchValue]);
 
   const handleSelect = () => {
     setIsChanged(!isChanged);
@@ -28,13 +59,11 @@ const MoviesList = (props) => {
 
   return (
     <>
-      {props.isSearch && (
+      <Header />
+      <Search />
+      {isSearch && (
         <>
-          <SearchBar
-            handleInput={props.handleInput}
-            handleSearch={props.handleSearch}
-            inputValue={props.inputValue}
-          />
+          <SearchBar />
           <form className="select__container">
             <label className="select__title" htmlFor="select">
               Sort by:

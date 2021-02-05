@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory, withRouter } from "react-router-dom";
 
-const Search = ({ handleInput, handleSearch, inputValue, isDetailPage }) => {
+const Search = () => {
+  const [inputValue, setInputValue] = useState("");
+  const history = useHistory();
+
+  const handleInput = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    history.push(`/${inputValue}`);
+    setInputValue("");
+  };
+
   return (
     <form className="search" onSubmit={handleSearch}>
       <input
@@ -17,4 +31,4 @@ const Search = ({ handleInput, handleSearch, inputValue, isDetailPage }) => {
   );
 };
 
-export default Search;
+export default withRouter(Search);
