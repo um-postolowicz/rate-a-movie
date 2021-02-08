@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
@@ -9,7 +9,9 @@ const API_KEY = "2fc6065a";
 const DETAIL_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&i=`;
 
 const Details = () => {
+  const [isPortrait, setIsPortrait] = useState(false);
   const [movieDetails, setMovieDetails] = useState([]);
+  const ref = useRef(null);
   const history = useHistory();
   let { id } = useParams();
   const {
@@ -28,6 +30,14 @@ const Details = () => {
     Writer,
   } = movieDetails;
 
+  const checkOrientation = () => {
+    if (window.matchMedia("(orientation:landscape)").matches) {
+      setIsPortrait(true);
+    } else {
+      setIsPortrait(false);
+    }
+  };
+
   useEffect(() => {
     scroll.scrollTo(0);
     setMovieDetails([]);
@@ -41,7 +51,11 @@ const Details = () => {
       })
       .then((response) => setMovieDetails(response))
       .catch((error) => console.log(error));
-  }, [id]);
+    window.addEventListener("orientationchange", checkOrientation);
+    return () => {
+      window.removeEventListener("orientationchange", checkOrientation);
+    };
+  }, [id, isPortrait]);
 
   return (
     <>
@@ -49,7 +63,9 @@ const Details = () => {
         <>
           <button className="back" onClick={() => history.goBack()}>
             <FaArrowCircleLeft className="back__icon" />
-            <p className="back__text">Go Back to Movies List</p>
+            <p className="back__text" ref={ref}>
+              {isPortrait ? "Go Back to Movies List" : null}
+            </p>
           </button>
           <div className="movie">
             <h1 className="movie__title">{Title}</h1>
@@ -78,11 +94,11 @@ const Details = () => {
               <p className="movie__date">
                 Date of release: <span>{Released}</span>
               </p>
-              <p className="movie__writers">
-                Writers: <span>{Writer}</span>
-              </p>
               <p className="movie__actors">
                 Actors: <span>{Actors}</span>
+              </p>
+              <p className="movie__writers">
+                Writers: <span>{Writer}</span>
               </p>
               <p className="movie__runtime">
                 Runtime: <span>{Runtime}</span>
@@ -92,10 +108,10 @@ const Details = () => {
               </p>
             </div>
             <div className="movie__rates">
-              <h2 className="movie__rate-title">Rates:</h2>
+              <h2 className="movie__rates-title">Rates:</h2>
               {Ratings ? (
                 Ratings.map((rating) => (
-                  <p className="movie__other-rate" key={rating.Source}>
+                  <p className="movie__rates-types" key={rating.Source}>
                     {rating.Source}: <span>{rating.Value}</span>
                   </p>
                 ))
