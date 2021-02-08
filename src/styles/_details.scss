@@ -37,6 +37,9 @@
     height: 100%;
     margin-top: 30px;
   }
+  @include media-query(small, $landscape) {
+    grid-template-rows: 20vh 45vh 24vh 25vh 44vh;
+  }
   &__title {
     font-size: 2.5rem;
     margin: -15px 0 5px;
@@ -109,6 +112,9 @@
       font-size: 1.1rem;
       width: 50%;
     }
+    @include media-query(small, $landscape) {
+      font-size: 1.2rem;
+    }
     p {
       @include media-query(xsmall, $landscape) {
         padding: 0 5px;
@@ -125,10 +131,12 @@
       border-bottom: 2px solid lighten($pink-color, 15%);
     }
     &-title {
-      align-self: start;
-      line-height: 4;
-      height: 100%;
-      width: 50%;
+      @include media-query(xsmall, $landscape) {
+        align-self: start;
+        line-height: 4;
+        height: 100%;
+        width: 50%;
+      }
     }
   }
   span {
