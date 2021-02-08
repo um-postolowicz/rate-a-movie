@@ -10,6 +10,7 @@ const DETAIL_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&i=`;
 
 const Details = () => {
   const [isPortrait, setIsPortrait] = useState(false);
+  const [isBig, setIsBig] = useState(false);
   const [movieDetails, setMovieDetails] = useState([]);
   const ref = useRef(null);
   const history = useHistory();
@@ -36,6 +37,16 @@ const Details = () => {
     } else {
       setIsPortrait(false);
     }
+    if (
+      window.matchMedia("(min-width:767px) and (orientation:portrait)")
+        .matches ||
+      window.matchMedia("(min-width:1023px) and (orientation:landscape)")
+        .matches
+    ) {
+      setIsBig(true);
+    } else {
+      setIsBig(false);
+    }
   };
 
   useEffect(() => {
@@ -55,18 +66,32 @@ const Details = () => {
     return () => {
       window.removeEventListener("orientationchange", checkOrientation);
     };
-  }, [id, isPortrait]);
+  }, [id, isPortrait, isBig]);
 
   return (
     <>
       {movieDetails ? (
         <>
-          <button className="back" onClick={() => history.goBack()}>
-            <FaArrowCircleLeft className="back__icon" />
-            <p className="back__text" ref={ref}>
-              {isPortrait ? "Go Back to Movies List" : null}
-            </p>
-          </button>
+          {isBig ? (
+            <div className="logo-back">
+              <button
+                className="back logo-back__btn"
+                onClick={() => history.goBack()}
+              >
+                <FaArrowCircleLeft className="back__icon" />
+                <p className="back__text">Go Back to Movies List</p>
+              </button>
+              <h1 className="logo-back__logo">Rate your movie</h1>
+            </div>
+          ) : (
+            <button className="back" onClick={() => history.goBack()}>
+              <FaArrowCircleLeft className="back__icon" />
+              <p className="back__text" ref={ref}>
+                {isPortrait ? "Go Back to Movies List" : null}
+              </p>
+            </button>
+          )}
+
           <div className="movie">
             <h1 className="movie__title">{Title}</h1>
             <p className="movie__type">{Type}</p>
@@ -81,7 +106,7 @@ const Details = () => {
               <Rate />
             </div>
             <div className="movie__information">
-              <h2 className="movie__info-title">Info:</h2>
+              <h2 className="movie__information-title">Info:</h2>
               <p className="movie__genre">
                 Genre: <span>{Genre}</span>
               </p>
