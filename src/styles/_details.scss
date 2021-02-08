@@ -58,6 +58,8 @@
   }
   &__btn {
     flex-basis: 30%;
+    transition: 0.3s;
+    cursor: pointer;
     @include media-query(large, $landscape) {
       margin-top: 5px;
       margin-left: 40px;
@@ -72,6 +74,20 @@
       font-size: 1.9rem;
       margin-top: 18px;
       margin-left: 60px;
+    }
+    @include media-query(xxlarge, $landscape) {
+      margin-top: 7px;
+      margin-left: 80px;
+    }
+    &:active {
+      outline: none;
+    }
+    &:hover,
+    &:active {
+      @include media-query(xxlarge, $landscape) {
+        background-color: lighten($orange-color, 10%);
+        color: black;
+      }
     }
   }
 }
@@ -116,6 +132,11 @@
     width: 70vw;
     height: 80vh;
   }
+  @include media-query(xxlarge, $landscape) {
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: 10vh 3vh 22vh 22vh 12vh;
+    height: 70vh;
+  }
   &__title {
     font-size: 2.5rem;
     margin: -15px 0 5px;
@@ -147,6 +168,9 @@
     @include media-query(xlarge, $landscape) {
       margin-top: 40px;
       font-size: 3.2rem;
+    }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 1, 4, 1, 1);
     }
   }
   &__type {
@@ -221,6 +245,13 @@
     @include media-query(xlarge, $landscape) {
       margin: 0 80px 0 60px;
     }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 1, 4, 5, 6);
+      width: 100%;
+      text-align: center;
+      padding: 30px;
+      margin: 0;
+    }
   }
   &__user-rate-title {
     margin-bottom: 6px;
@@ -246,6 +277,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 3, 4, 4, 5);
+      @include flexbox(column, flex-start, center);
+    }
+    &-title {
+      @include media-query(xxlarge, $landscape) {
+        margin-top: 20px;
+        flex-basis: 20%;
+      }
     }
   }
 
@@ -284,6 +325,11 @@
     @include media-query(large, $portrait) {
       font-size: 1.4rem;
     }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 2, 3, 3, 5);
+      width: 100%;
+      margin-top: 30px;
+    }
     &-title {
       @include media-query(xlarge, $landscape) {
         padding-left: 5px;
@@ -320,6 +366,9 @@
     @include media-query(large, $portrait) {
       font-size: 1.4rem;
     }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 3, 4, 3, 5);
+    }
     &-title {
       @include media-query(xsmall, $landscape) {
         align-self: start;
@@ -331,6 +380,9 @@
         line-height: 1;
         margin-bottom: 0;
         height: 12%;
+      }
+      @include media-query(xxlarge, $landscape) {
+        height: 7%;
       }
     }
   }
