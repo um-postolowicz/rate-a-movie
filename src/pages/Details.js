@@ -4,13 +4,14 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 import noPoster from "../images/no-poster.svg";
 import Rate from "../components/Rate";
+import ButtonDetails from "../components/ButtonDetails";
 
 const API_KEY = "2fc6065a";
 const DETAIL_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&i=`;
 
 const Details = () => {
   const [isPortrait, setIsPortrait] = useState(false);
-  const [isBig, setIsBig] = useState(false);
+  const [isBig, setIsBig] = useState(true);
   const [movieDetails, setMovieDetails] = useState([]);
   const ref = useRef(null);
   const history = useHistory();
@@ -74,22 +75,13 @@ const Details = () => {
         <>
           {isBig ? (
             <div className="logo-back">
-              <button
-                className="back logo-back__btn"
-                onClick={() => history.goBack()}
-              >
-                <FaArrowCircleLeft className="back__icon" />
-                <p className="back__text">Go Back to Movies List</p>
-              </button>
+              <ButtonDetails buttonContent={"Go Back to Movies List"} />
               <h1 className="logo-back__logo">Rate your movie</h1>
             </div>
           ) : (
-            <button className="back" onClick={() => history.goBack()}>
-              <FaArrowCircleLeft className="back__icon" />
-              <p className="back__text" ref={ref}>
-                {isPortrait ? "Go Back to Movies List" : null}
-              </p>
-            </button>
+            <ButtonDetails
+              buttonContent={isPortrait ? "Go Back to Movies List" : null}
+            />
           )}
 
           <div className="movie">
