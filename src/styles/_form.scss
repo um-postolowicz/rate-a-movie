@@ -1,3 +1,11 @@
+.no-input::placeholder {
+  color: rgb(235, 26, 95);
+}
+.no-input:focus {
+  &::placeholder {
+    color: #777;
+  }
+}
 .search {
   z-index: 3;
   @include position($top: 75vh, $height: 20vh);

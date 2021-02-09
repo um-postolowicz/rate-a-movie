@@ -26,7 +26,7 @@ const MoviesList = () => {
 
   useEffect(() => {
     setMovies([]);
-    if (!searchValue) return;
+    // if (!searchValue) return;
     fetch(BASE_API_URL + `"${searchValue}"`)
       .then((response) => {
         if (response.ok) {

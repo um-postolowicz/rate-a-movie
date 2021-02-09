@@ -276,6 +276,38 @@ a {
   }
 }
 
+.no-input::-webkit-input-placeholder {
+  color: #eb1a5f;
+}
+
+.no-input:-ms-input-placeholder {
+  color: #eb1a5f;
+}
+
+.no-input::-ms-input-placeholder {
+  color: #eb1a5f;
+}
+
+.no-input::placeholder {
+  color: #eb1a5f;
+}
+
+.no-input:focus::-webkit-input-placeholder {
+  color: #777;
+}
+
+.no-input:focus:-ms-input-placeholder {
+  color: #777;
+}
+
+.no-input:focus::-ms-input-placeholder {
+  color: #777;
+}
+
+.no-input:focus::placeholder {
+  color: #777;
+}
+
 .search {
   z-index: 3;
   position: absolute;

@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import { FaArrowCircleLeft } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 import noPoster from "../images/no-poster.svg";
 import Rate from "../components/Rate";
@@ -13,8 +12,6 @@ const Details = () => {
   const [isPortrait, setIsPortrait] = useState(false);
   const [isBig, setIsBig] = useState(true);
   const [movieDetails, setMovieDetails] = useState([]);
-  const ref = useRef(null);
-  const history = useHistory();
   let { id } = useParams();
   const {
     Actors,
