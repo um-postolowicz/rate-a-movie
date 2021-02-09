@@ -9,7 +9,7 @@
   z-index: 7;
   &__content {
     width: 90vw;
-    height: 35vh;
+    height: 36vh;
     background-color: white;
     border-radius: 20px;
   }
@@ -45,5 +45,22 @@
   &__body {
     padding: 10px 20px;
     font-size: 1.2rem;
+    text-align: justify;
+    line-height: 1.5;
+  }
+  &__welcome {
+    font-weight: bold;
+    display: block;
+    text-align: center;
+  }
+  &__text {
+    margin-top: 5px;
+  }
+  &__important {
+    font-weight: bold;
+  }
+  &__link {
+    color: darken($pink-color, 20%);
+    font-weight: bold;
   }
 }

@@ -75,7 +75,7 @@ a {
 
 .modal__content {
   width: 90vw;
-  height: 35vh;
+  height: 36vh;
   background-color: white;
   border-radius: 20px;
 }
@@ -133,6 +133,27 @@ a {
 .modal__body {
   padding: 10px 20px;
   font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.modal__welcome {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.modal__text {
+  margin-top: 5px;
+}
+
+.modal__important {
+  font-weight: bold;
+}
+
+.modal__link {
+  color: #b826dd;
+  font-weight: bold;
 }
 
 ::-webkit-scrollbar {
