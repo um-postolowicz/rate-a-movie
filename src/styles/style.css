@@ -75,9 +75,69 @@ a {
 
 .modal__content {
   width: 90vw;
-  height: 36vh;
+  height: 38vh;
   background-color: white;
   border-radius: 20px;
+}
+
+@media (orientation: portrait) and (min-width: 359px) {
+  .modal__content {
+    width: 88vw;
+    height: 31vh;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 410px) {
+  .modal__content {
+    height: 58vh;
+    width: 80vw;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .modal__content {
+    width: 80vw;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 639px) {
+  .modal__content {
+    width: 75vw;
+    height: 50vh;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 767px) {
+  .modal__content {
+    width: 60vw;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 767px) {
+  .modal__content {
+    width: 75vw;
+    height: 20vh;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1023px) {
+  .modal__content {
+    height: 28vh;
+    width: 50vw;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 1023px) {
+  .modal__content {
+    width: 70vw;
+    height: 18vh;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1199px) {
+  .modal__content {
+    height: 25vh;
+  }
 }
 
 .modal__header {
@@ -95,6 +155,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   padding: 10px 20px;
+  height: 25%;
   border-bottom: 1px solid #ddd;
 }
 
@@ -103,6 +164,24 @@ a {
       -ms-flex-positive: 1;
           flex-grow: 1;
   font-size: 1.4rem;
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .modal__header-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 1023px) {
+  .modal__header-title {
+    font-size: 1.7rem;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1199px) {
+  .modal__header-title {
+    font-size: 1.7rem;
+  }
 }
 
 .modal__close {
@@ -130,17 +209,67 @@ a {
   background-color: #fbb45e;
 }
 
+@media (orientation: portrait) and (min-width: 1023px) {
+  .modal__close-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.7rem;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1199px) {
+  .modal__close-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.7rem;
+  }
+}
+
 .modal__body {
+  height: 75%;
   padding: 10px 20px;
   font-size: 1.2rem;
   text-align: justify;
   line-height: 1.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media (orientation: portrait) and (min-width: 410px) {
+  .modal__body {
+    font-size: 1.3rem;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 1023px) {
+  .modal__body {
+    font-size: 1.5rem;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1199px) {
+  .modal__body {
+    font-size: 1.5rem;
+  }
 }
 
 .modal__welcome {
   font-weight: bold;
   display: block;
-  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .modal__text {

@@ -9,17 +9,60 @@
   z-index: 7;
   &__content {
     width: 90vw;
-    height: 36vh;
+    height: 38vh;
     background-color: white;
     border-radius: 20px;
+    @include media-query(xxsmall, $portrait) {
+      width: 88vw;
+      height: 31vh;
+    }
+    @include media-query(xsmall, $landscape) {
+      height: 58vh;
+      width: 80vw;
+    }
+    @include media-query(xsmall, $portrait) {
+      width: 80vw;
+    }
+    @include media-query(small, $landscape) {
+      width: 75vw;
+      height: 50vh;
+    }
+    @include media-query(medium, $landscape) {
+      width: 60vw;
+    }
+    @include media-query(medium, $portrait) {
+      width: 75vw;
+      height: 20vh;
+    }
+    @include media-query(large, $landscape) {
+      height: 28vh;
+      width: 50vw;
+    }
+    @include media-query(large, $portrait) {
+      width: 70vw;
+      height: 18vh;
+    }
+    @include media-query(xlarge, $landscape) {
+      height: 25vh;
+    }
   }
   &__header {
     @include flexbox(row, flex-end, center);
     padding: 10px 20px;
+    height: 25%;
     border-bottom: 1px solid #ddd;
     &-title {
       flex-grow: 1;
       font-size: 1.4rem;
+      @include media-query(xsmall, $portrait) {
+        font-size: 1.5rem;
+      }
+      @include media-query(large, $portrait) {
+        font-size: 1.7rem;
+      }
+      @include media-query(xlarge, $landscape) {
+        font-size: 1.7rem;
+      }
     }
   }
   &__close {
@@ -40,18 +83,39 @@
       &:active {
         background-color: darken($orange-color, 10%);
       }
+      @include media-query(large, $portrait) {
+        width: 30px;
+        height: 30px;
+        font-size: 1.7rem;
+      }
+      @include media-query(xlarge, $landscape) {
+        width: 30px;
+        height: 30px;
+        font-size: 1.7rem;
+      }
     }
   }
   &__body {
+    height: 75%;
     padding: 10px 20px;
     font-size: 1.2rem;
     text-align: justify;
     line-height: 1.5;
+    @include flexbox(column, center, flex-start);
+    @include media-query(xsmall, $portrait) {
+      font-size: 1.3rem;
+    }
+    @include media-query(large, $portrait) {
+      font-size: 1.5rem;
+    }
+    @include media-query(xlarge, $landscape) {
+      font-size: 1.5rem;
+    }
   }
   &__welcome {
     font-weight: bold;
     display: block;
-    text-align: center;
+    align-self: center;
   }
   &__text {
     margin-top: 5px;
