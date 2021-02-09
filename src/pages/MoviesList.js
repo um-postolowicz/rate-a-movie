@@ -12,9 +12,10 @@ const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&page=1&s=`;
 const MoviesList = () => {
   let { searchValue } = useParams();
 
-  const [movies, setMovies] = useState([]);
   const [isChanged, setIsChanged] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
+  const [movies, setMovies] = useState([]);
   const [moviesList, setMoviesList] = useState("");
 
   const ref = useRef(null);
@@ -22,6 +23,27 @@ const MoviesList = () => {
   const scrollAfterSearch = () => {
     const scrollHeight = window.innerHeight;
     scroll.scrollTo(scrollHeight);
+  };
+
+  const catchError = () => {
+    try {
+      movies.map((movie) =>
+        movie.Type === "movie" || "series" ? (
+          <Movie
+            key={movie.imdbID}
+            index={movie.imdbID}
+            poster={movie.Poster}
+            searchValue={searchValue}
+            title={movie.Title}
+            type={movie.Type}
+            year={movie.Year}
+          />
+        ) : null
+      );
+    } catch {
+      return true;
+    }
+    return false;
   };
 
   useEffect(() => {
@@ -35,7 +57,7 @@ const MoviesList = () => {
         }
       })
       .then((response) => setMovies(response.Search))
-      .catch((error) => console.log(error));
+      .catch((error) => setIsError(true));
     scrollAfterSearch();
     setIsSearch(true);
   }, [searchValue]);
@@ -61,7 +83,8 @@ const MoviesList = () => {
     <>
       <Header />
       <Search />
-      {isSearch && (
+
+      {!catchError() && isSearch && (
         <>
           <SearchBar />
           <form className="select__container">
@@ -90,35 +113,38 @@ const MoviesList = () => {
           </form>
         </>
       )}
-      <ul className="movies">
-        {moviesList
-          ? moviesList.map((movie) =>
-              movie.Type === "movie" || "series" ? (
-                <Movie
-                  key={movie.imdbID}
-                  index={movie.imdbID}
-                  poster={movie.Poster}
-                  searchValue={searchValue}
-                  title={movie.Title}
-                  type={movie.Type}
-                  year={movie.Year}
-                />
-              ) : null
-            )
-          : movies.map((movie) =>
-              movie.Type === "movie" || "series" ? (
-                <Movie
-                  key={movie.imdbID}
-                  index={movie.imdbID}
-                  poster={movie.Poster}
-                  searchValue={searchValue}
-                  title={movie.Title}
-                  type={movie.Type}
-                  year={movie.Year}
-                />
-              ) : null
-            )}
-      </ul>
+      {!catchError() && (
+        <ul className="movies">
+          {moviesList
+            ? moviesList.map((movie) =>
+                movie.Type === "movie" || "series" ? (
+                  <Movie
+                    key={movie.imdbID}
+                    index={movie.imdbID}
+                    poster={movie.Poster}
+                    searchValue={searchValue}
+                    title={movie.Title}
+                    type={movie.Type}
+                    year={movie.Year}
+                  />
+                ) : null
+              )
+            : movies.map((movie) =>
+                movie.Type === "movie" || "series" ? (
+                  <Movie
+                    key={movie.imdbID}
+                    index={movie.imdbID}
+                    poster={movie.Poster}
+                    searchValue={searchValue}
+                    title={movie.Title}
+                    type={movie.Type}
+                    year={movie.Year}
+                  />
+                ) : null
+              )}
+        </ul>
+      )}
+      {catchError() && <h1>No</h1>}
     </>
   );
 };
