@@ -7,7 +7,7 @@ import Search from "../components/Search";
 import SearchBar from "../components/SearchBar";
 
 const API_KEY = "2fc6065a";
-const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`;
+const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&page=1&s=`;
 
 const MoviesList = () => {
   let { searchValue } = useParams();
@@ -26,7 +26,6 @@ const MoviesList = () => {
 
   useEffect(() => {
     setMovies([]);
-    // if (!searchValue) return;
     fetch(BASE_API_URL + `"${searchValue}"`)
       .then((response) => {
         if (response.ok) {

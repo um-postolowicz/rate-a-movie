@@ -1,0 +1,49 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  @include flexbox(column);
+  z-index: 7;
+  &__content {
+    width: 90vw;
+    height: 35vh;
+    background-color: white;
+    border-radius: 20px;
+  }
+  &__header {
+    @include flexbox(row, flex-end, center);
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    &-title {
+      flex-grow: 1;
+      font-size: 1.4rem;
+    }
+  }
+  &__close {
+    flex-basis: 5%;
+    &-btn {
+      width: 23px;
+      height: 23px;
+      background-color: darken($orange-color, 20%);
+      border: 2px solid darken($orange-color, 20%);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        background-color: darken($orange-color, 10%);
+      }
+    }
+  }
+  &__body {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+}
