@@ -210,6 +210,18 @@ a {
   background-color: #fbb45e;
 }
 
+@media (orientation: portrait) and (min-width: 1365px) {
+  .modal__close-btn:hover {
+    background-color: #fccb90;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1365px) {
+  .modal__close-btn:hover {
+    background-color: #fccb90;
+  }
+}
+
 @media (orientation: portrait) and (min-width: 1023px) {
   .modal__close-btn {
     width: 30px;
