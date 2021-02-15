@@ -85,6 +85,9 @@
         background-color: darken($orange-color, 10%);
       }
       &:hover {
+        @include media-query(xxlarge, $portrait) {
+          background-color: $orange-color;
+        }
         @include media-query(xxlarge, $landscape) {
           background-color: $orange-color;
         }
