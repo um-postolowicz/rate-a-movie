@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/rate-a-movie/static/css/main.2b166b4f.chunk.css",
+    "main.js": "/rate-a-movie/static/js/main.e6f2e114.chunk.js",
+    "main.js.map": "/rate-a-movie/static/js/main.e6f2e114.chunk.js.map",
+    "runtime-main.js": "/rate-a-movie/static/js/runtime-main.90774a32.js",
+    "runtime-main.js.map": "/rate-a-movie/static/js/runtime-main.90774a32.js.map",
+    "static/js/2.ba7c7b2e.chunk.js": "/rate-a-movie/static/js/2.ba7c7b2e.chunk.js",
+    "static/js/2.ba7c7b2e.chunk.js.map": "/rate-a-movie/static/js/2.ba7c7b2e.chunk.js.map",
+    "index.html": "/rate-a-movie/index.html",
+    "static/css/main.2b166b4f.chunk.css.map": "/rate-a-movie/static/css/main.2b166b4f.chunk.css.map",
+    "static/js/2.ba7c7b2e.chunk.js.LICENSE.txt": "/rate-a-movie/static/js/2.ba7c7b2e.chunk.js.LICENSE.txt",
+    "static/media/erroricon.91ce532b.svg": "/rate-a-movie/static/media/erroricon.91ce532b.svg",
+    "static/media/style.css": "/rate-a-movie/static/media/header-img-640x400.c6fe780a.jpg",
+    "static/media/no-poster.b16e615a.svg": "/rate-a-movie/static/media/no-poster.b16e615a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.90774a32.js",
+    "static/js/2.ba7c7b2e.chunk.js",
+    "static/css/main.2b166b4f.chunk.css",
+    "static/js/main.e6f2e114.chunk.js"
+  ]
+}
