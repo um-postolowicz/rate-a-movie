@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
+import ErrorPage from "./ErrorPage";
 import Header from "../components/Header";
 import Movie from "../components/Movie";
 import Search from "../components/Search";
@@ -13,7 +14,6 @@ const MoviesList = () => {
   let { searchValue } = useParams();
 
   const [isChanged, setIsChanged] = useState(false);
-  const [isError, setIsError] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
   const [movies, setMovies] = useState([]);
   const [moviesList, setMoviesList] = useState("");
@@ -57,7 +57,7 @@ const MoviesList = () => {
         }
       })
       .then((response) => setMovies(response.Search))
-      .catch((error) => setIsError(true));
+      .catch((error) => console.log(error));
     scrollAfterSearch();
     setIsSearch(true);
   }, [searchValue]);
@@ -144,7 +144,7 @@ const MoviesList = () => {
               )}
         </ul>
       )}
-      {catchError() && <h1>No</h1>}
+      {catchError() && <ErrorPage />}
     </>
   );
 };

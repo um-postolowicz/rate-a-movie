@@ -1,0 +1,55 @@
+.error {
+  margin: 60px auto;
+  height: 30vh;
+  width: 90vw;
+  @include flexbox(column, center, center);
+  @include media-query(xsmall, $landscape) {
+    height: 60vh;
+    margin: 0 auto;
+    @include flexbox(row, space-around, center);
+  }
+  @include media-query(medium, $portrait) {
+    height: 12vh;
+    @include flexbox(row, space-around, center);
+  }
+  @include media-query(large, $landscape) {
+    height: 30vh;
+  }
+  @include media-query(xxlarge, $landscape) {
+    height: 24vh;
+    justify-content: center;
+  }
+  &__sign {
+    width: 40%;
+    height: auto;
+    margin-bottom: 20px;
+    @include media-query(xsmall, $landscape) {
+      width: 20%;
+      margin: 0;
+    }
+    @include media-query(medium, $portrait) {
+      width: 10%;
+    }
+    @include media-query(large, $landscape) {
+      width: 10%;
+    }
+  }
+  &__text {
+    margin-bottom: 20px;
+    border: 2px solid $orange-color;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: justify;
+    @include media-query(xsmall, $landscape) {
+      flex-basis: 70%;
+      margin: 0;
+    }
+    @include media-query(large, $landscape) {
+      flex-basis: 85%;
+    }
+    @include media-query(xxlarge, $landscape) {
+      flex-basis: 70%;
+      text-align: center;
+    }
+  }
+}
