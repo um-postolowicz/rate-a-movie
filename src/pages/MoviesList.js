@@ -1,13 +1,66 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
+import { animateScroll as scroll } from "react-scroll";
+import ErrorPage from "./ErrorPage";
+import Header from "../components/Header";
 import Movie from "../components/Movie";
+import Search from "../components/Search";
 import SearchBar from "../components/SearchBar";
 
-const MoviesList = (props) => {
-  const { movies } = props;
+const API_KEY = "2fc6065a";
+const BASE_API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&page=1&s=`;
+
+const MoviesList = () => {
+  let { searchValue } = useParams();
+
   const [isChanged, setIsChanged] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
+  const [movies, setMovies] = useState([]);
   const [moviesList, setMoviesList] = useState("");
 
   const ref = useRef(null);
+
+  const scrollAfterSearch = () => {
+    const scrollHeight = window.innerHeight;
+    scroll.scrollTo(scrollHeight);
+  };
+
+  const catchError = () => {
+    try {
+      movies.map((movie) =>
+        movie.Type === "movie" || "series" ? (
+          <Movie
+            key={movie.imdbID}
+            index={movie.imdbID}
+            poster={movie.Poster}
+            searchValue={searchValue}
+            title={movie.Title}
+            type={movie.Type}
+            year={movie.Year}
+          />
+        ) : null
+      );
+    } catch {
+      return true;
+    }
+    return false;
+  };
+
+  useEffect(() => {
+    setMovies([]);
+    fetch(BASE_API_URL + `"${searchValue}"`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(`Http error: ${response.status}`);
+        }
+      })
+      .then((response) => setMovies(response.Search))
+      .catch((error) => console.log(error));
+    scrollAfterSearch();
+    setIsSearch(true);
+  }, [searchValue]);
 
   const handleSelect = () => {
     setIsChanged(!isChanged);
@@ -28,13 +81,12 @@ const MoviesList = (props) => {
 
   return (
     <>
-      {props.isSearch && (
+      <Header />
+      <Search />
+
+      {!catchError() && isSearch && (
         <>
-          <SearchBar
-            handleInput={props.handleInput}
-            handleSearch={props.handleSearch}
-            inputValue={props.inputValue}
-          />
+          <SearchBar />
           <form className="select__container">
             <label className="select__title" htmlFor="select">
               Sort by:
@@ -61,33 +113,38 @@ const MoviesList = (props) => {
           </form>
         </>
       )}
-      <ul className="movies">
-        {moviesList
-          ? moviesList.map((movie) =>
-              movie.Type === "movie" || "series" ? (
-                <Movie
-                  key={movie.imdbID}
-                  index={movie.imdbID}
-                  poster={movie.Poster}
-                  title={movie.Title}
-                  type={movie.Type}
-                  year={movie.Year}
-                />
-              ) : null
-            )
-          : movies.map((movie) =>
-              movie.Type === "movie" || "series" ? (
-                <Movie
-                  key={movie.imdbID}
-                  index={movie.imdbID}
-                  poster={movie.Poster}
-                  title={movie.Title}
-                  type={movie.Type}
-                  year={movie.Year}
-                />
-              ) : null
-            )}
-      </ul>
+      {!catchError() && (
+        <ul className="movies">
+          {moviesList
+            ? moviesList.map((movie) =>
+                movie.Type === "movie" || "series" ? (
+                  <Movie
+                    key={movie.imdbID}
+                    index={movie.imdbID}
+                    poster={movie.Poster}
+                    searchValue={searchValue}
+                    title={movie.Title}
+                    type={movie.Type}
+                    year={movie.Year}
+                  />
+                ) : null
+              )
+            : movies.map((movie) =>
+                movie.Type === "movie" || "series" ? (
+                  <Movie
+                    key={movie.imdbID}
+                    index={movie.imdbID}
+                    poster={movie.Poster}
+                    searchValue={searchValue}
+                    title={movie.Title}
+                    type={movie.Type}
+                    year={movie.Year}
+                  />
+                ) : null
+              )}
+        </ul>
+      )}
+      {catchError() && <ErrorPage />}
     </>
   );
 };

@@ -27,34 +27,31 @@ const starsBasic = [
 const Rate = () => {
   const ref = useRef(null);
   const [isRateSent, setIsRateSent] = useState(false);
-  const [renderState, setRenderState] = useState(false);
   const [stars, setStars] = useState(starsBasic);
 
   const handleRate = (e) => {
-    setRenderState(!renderState);
-    let table = stars;
+    let table = [...starsBasic];
+    setStars(table);
     const clickPosition = e.clientX;
     const margin = ref.current.offsetParent.offsetLeft;
     const starsLeft = ref.current.offsetLeft;
-    console.log(ref);
     const clickPositionInStarsDiv = clickPosition - starsLeft - margin - 2;
     const starId = Math.ceil(clickPositionInStarsDiv / 12.5);
-    table.forEach((element) => (element.icon = <BsStar />));
+    stars.forEach((element) => (element.icon = <BsStar />));
     for (let i = 0; i < starId / 2; i++) {
-      table[i].icon = <BsStarFill />;
+      stars[i].icon = <BsStarFill />;
     }
     if (starId % 2 !== 0) {
       const index = Math.floor(starId / 2);
-      table[index].icon = <BsStarHalf />;
+      stars[index].icon = <BsStarHalf />;
     }
-    table.map((element) => <li key={element.id}>{element.icon}</li>);
-    setStars(table);
     return stars;
   };
 
-  const sendRate = (e) => {
-    e.preventDefault();
+  const sendRate = () => {
     setIsRateSent(true);
+    let table = starsBasic.map((star) => (star.icon = <BsStar />));
+    setStars(table);
   };
 
   return (

@@ -8,9 +8,87 @@
   font-size: 1.4rem;
   color: white;
   font-weight: bold;
+  @include media-query(xsmall, $landscape) {
+    position: absolute;
+    margin: 0;
+    top: 10px;
+    left: 1.5%;
+  }
+  @include media-query(large, $landscape) {
+    left: 3%;
+  }
   &__icon {
     padding-right: 7px;
     font-size: 2.5rem;
+    @include media-query(xsmall, $landscape) {
+      padding-right: 0;
+    }
+    @include media-query(large, $landscape) {
+      padding-right: 6px;
+    }
+  }
+}
+.logo-back {
+  height: 10vh;
+  box-shadow: 0 0 6px 10px #ddd;
+  @include flexbox(row, center, center);
+  padding: 10px 20px;
+  margin-bottom: 50px;
+
+  &__logo {
+    font-family: "Bungee Outline", cursive;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 10px;
+    color: white;
+    text-shadow: 0 0 5px darken($pink-color, 20%);
+    @include media-query(large, $landscape) {
+      margin-top: 0;
+      letter-spacing: 2px;
+      text-align: right;
+      margin-right: 100px;
+    }
+    @include media-query(large, $portrait) {
+      font-size: 5rem;
+    }
+    @include media-query(xlarge, $landscape) {
+      font-size: 5rem;
+    }
+  }
+  &__btn {
+    flex-basis: 30%;
+    transition: 0.3s;
+    cursor: pointer;
+    @include media-query(large, $landscape) {
+      margin-top: 5px;
+      margin-left: 40px;
+      flex-basis: 40%;
+    }
+    @include media-query(large, $portrait) {
+      flex-basis: 25%;
+      font-size: 1.7rem;
+      margin-left: 80px;
+    }
+    @include media-query(xlarge, $landscape) {
+      font-size: 1.9rem;
+      margin-top: 18px;
+      margin-left: 60px;
+    }
+    @include media-query(xxlarge, $landscape) {
+      margin-top: 7px;
+      margin-left: 80px;
+    }
+    &:active {
+      outline: none;
+    }
+    &:hover,
+    &:active {
+      @include media-query(xxlarge, $landscape) {
+        background-color: lighten($orange-color, 10%);
+        color: black;
+      }
+    }
   }
 }
 .movie {
@@ -20,6 +98,45 @@
   padding: 0 15px 15px;
   border: 2px solid $pink-color;
   background-color: lighten($pink-color, 26%);
+  @include media-query(xsmall, $landscape) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20vh 45vh 24vh 25vh 50vh;
+    width: 90vw;
+    height: 100%;
+    margin-top: 30px;
+  }
+  @include media-query(small, $landscape) {
+    grid-template-rows: 20vh 45vh 24vh 25vh 44vh;
+  }
+  @include media-query(medium, $portrait) {
+    height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 5vh 2vh 30vh 12vh 12vh 10vh;
+  }
+  @include media-query(large, $landscape) {
+    grid-template-rows: 7vh 3vh 40vh 12vh 9vh 9vh;
+    margin-top: -20px;
+    height: 82vh;
+  }
+
+  @include media-query(large, $portrait) {
+    grid-template-rows: 5vh 2vh 25vh 10vh 12vh 8vh;
+    height: 65vh;
+    margin-top: 70px;
+    width: 80vw;
+  }
+  @include media-query(xlarge, $landscape) {
+    grid-template-rows: 10vh 3vh 30vh 15vh 12vh 8vh;
+    width: 70vw;
+    height: 80vh;
+  }
+  @include media-query(xxlarge, $landscape) {
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: 10vh 3vh 22vh 22vh 12vh;
+    height: 70vh;
+  }
   &__title {
     font-size: 2.5rem;
     margin: -15px 0 5px;
@@ -27,29 +144,246 @@
     background-color: white;
     border-radius: $border-radius;
     color: $pink-color;
+    text-align: center;
+    @include media-query(xsmall, $landscape) {
+      background-color: transparent;
+      align-self: center;
+      justify-self: center;
+      padding: 0;
+      margin: 0;
+    }
+    @include media-query(medium, $portrait) {
+      @include grid-settings(100%, 100%, 1, 3, 1, 1);
+      background-color: transparent;
+      margin-top: 30px;
+    }
+    @include media-query(large, $landscape) {
+      margin-top: 20px;
+      @include grid-settings(100%, 100%, 1, 3, 1, 2);
+    }
+    @include media-query(large, $portrait) {
+      margin-top: 30px;
+      font-size: 3rem;
+    }
+    @include media-query(xlarge, $landscape) {
+      margin-top: 40px;
+      font-size: 3.2rem;
+    }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 1, 4, 1, 1);
+    }
   }
   &__type {
     font-size: 1.2rem;
     text-transform: uppercase;
     margin-bottom: 5px;
+    @include media-query(xsmall, $landscape) {
+      padding-left: 10px;
+      display: none;
+    }
+    @include media-query(medium, $portrait) {
+      text-align: left;
+      @include grid-settings(50%, 100%, 2, 3, 2, 3);
+      padding-left: 10px;
+    }
+    @include media-query(large, $landscape) {
+      display: block;
+      @include grid-settings(100%, 100%, 2, 3, 2, 3);
+    }
+    @include media-query(xlarge, $landscape) {
+      margin-top: 20px;
+      padding-left: 5px;
+    }
   }
   &__poster {
     width: 70%;
     box-shadow: 0 0 6px 3px #ddd;
+    @include media-query(xsmall, $landscape) {
+      @include grid-settings($max-width: 100%, $grid-row-end: 4);
+      justify-self: center;
+    }
+    @include media-query(medium, $portrait) {
+      @include grid-settings(auto, 100%, 1, 2, 3, 5);
+      width: 90%;
+      margin-left: 7px;
+    }
+    @include media-query(large, $landscape) {
+      @include grid-settings(95%, 100%, 1, 2, 2, 5);
+      width: auto;
+    }
+    @include media-query(large, $portrait) {
+      @include grid-settings(95%, 100%, 1, 2, 2, 5);
+      width: auto;
+      justify-self: center;
+    }
+    @include media-query(xlarge, $landscape) {
+      @include grid-settings(100%, 100%, 1, 1, 2, 5);
+      width: auto;
+    }
   }
   &__description {
     margin: 10px 0 10px;
     font-size: 1.3rem;
     text-align: justify;
     font-weight: bold;
+    @include media-query(xsmall, $landscape) {
+      padding: 0 10px;
+    }
+    @include media-query(medium, $portrait) {
+      @include grid-settings(auto, 100%, 1, 3, 5, 6);
+      padding: 0 10px;
+      font-size: 1.5rem;
+    }
+    @include media-query(large, $landscape) {
+      @include grid-settings(auto, 100%, 1, 3, 5, 6);
+      padding: 0 20px;
+    }
+    @include media-query(large, $portrait) {
+      margin: 0 80px;
+      line-height: 2;
+    }
+    @include media-query(xlarge, $landscape) {
+      margin: 0 80px 0 60px;
+    }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 1, 4, 5, 6);
+      width: 100%;
+      text-align: center;
+      padding: 30px;
+      margin: 0;
+    }
   }
+  &__user-rate-title {
+    margin-bottom: 6px;
+    @include media-query(large, $landscape) {
+      flex-basis: 40%;
+      text-align: right;
+    }
+  }
+  &__user-rate {
+    button {
+      width: 60px;
+      background-color: darken($orange-color, 10%);
+      border: 2px solid darken($orange-color, 10%);
+      color: white;
+      border-radius: 15px;
+    }
+    @include media-query(medium, $portrait) {
+      @include grid-settings(100%, 100%, 1, 3, 6, 7);
+      padding-top: 10px;
+    }
+    @include media-query(large, $landscape) {
+      @include grid-settings(100%, 100%, 1, 3, 6, 7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 3, 4, 4, 5);
+      @include flexbox(column, flex-start, center);
+    }
+    &-title {
+      @include media-query(xxlarge, $landscape) {
+        margin-top: 20px;
+        flex-basis: 20%;
+      }
+    }
+  }
+
   &__information,
-  &__rates {
+  &__rates,
+  &__user-rate {
     margin-top: 10px;
     font-size: 1.2rem;
     text-align: center;
     p {
       margin-top: 7px;
+    }
+  }
+  &__information {
+    @include media-query(xsmall, $landscape) {
+      @include grid-settings(90%, 100%, 1, 3, 5, 5);
+      @include flexbox(column);
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+      width: 50%;
+    }
+    @include media-query(small, $landscape) {
+      font-size: 1.2rem;
+    }
+    @include media-query(medium, $portrait) {
+      @include grid-settings(auto, 100%, 2, 2, 3, 4);
+      padding: 0 10px;
+      text-align: left;
+      font-size: 1.3rem;
+    }
+    @include media-query(large, $landscape) {
+      @include grid-settings(100%, 100%, 2, 3, 3, 4);
+      display: block;
+      text-align: left;
+    }
+    @include media-query(large, $portrait) {
+      font-size: 1.4rem;
+    }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 2, 3, 3, 5);
+      width: 100%;
+      margin-top: 30px;
+    }
+    &-title {
+      @include media-query(xlarge, $landscape) {
+        padding-left: 5px;
+      }
+    }
+    p {
+      @include media-query(xsmall, $landscape) {
+        padding: 0 5px;
+      }
+    }
+  }
+  &__rates {
+    @include media-query(xsmall, $landscape) {
+      @include grid-settings(100%, 100%, 1, 3, 4, 4);
+      @include flexbox(column, space-evenly);
+      flex-wrap: wrap;
+      padding-bottom: 10px;
+      border-top: 2px solid lighten($pink-color, 15%);
+      border-bottom: 2px solid lighten($pink-color, 15%);
+    }
+    @include media-query(medium, $portrait) {
+      @include grid-settings(auto, 100%, 2, 3, 4, 5);
+      text-align: left;
+      padding: 0 10px;
+      font-size: 1.3rem;
+    }
+    @include media-query(large, $landscape) {
+      @include grid-settings(100%, 100%, 2, 3, 4, 5);
+      display: block;
+      text-align: left;
+      border: none;
+      padding: 0 5px;
+    }
+    @include media-query(large, $portrait) {
+      font-size: 1.4rem;
+    }
+    @include media-query(xxlarge, $landscape) {
+      @include grid-settings(100%, 100%, 3, 4, 3, 5);
+    }
+    &-title {
+      @include media-query(xsmall, $landscape) {
+        align-self: start;
+        line-height: 4;
+        height: 100%;
+        width: 50%;
+      }
+      @include media-query(large, $landscape) {
+        line-height: 1;
+        margin-bottom: 0;
+        height: 12%;
+      }
+      @include media-query(xxlarge, $landscape) {
+        height: 7%;
+      }
     }
   }
   span {
