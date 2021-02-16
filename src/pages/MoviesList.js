@@ -13,7 +13,6 @@ const BASE_API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&page=1&s=`;
 const MoviesList = () => {
   let { searchValue } = useParams();
 
-  const [isChanged, setIsChanged] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
   const [movies, setMovies] = useState([]);
   const [moviesList, setMoviesList] = useState("");
@@ -63,10 +62,10 @@ const MoviesList = () => {
   }, [searchValue]);
 
   const handleSelect = () => {
-    setIsChanged(!isChanged);
+    setMoviesList(movies);
     const select = ref.current;
     const selected = select.options[select.selectedIndex].value;
-    let moviesSort = movies;
+    let moviesSort = [...movies];
     if (selected === "title-up") {
       moviesSort.sort((a, b) => (a.Title > b.Title ? 1 : -1));
     } else if (selected === "title-down") {
