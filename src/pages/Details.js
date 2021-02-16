@@ -48,6 +48,7 @@ const Details = () => {
   };
 
   useEffect(() => {
+    checkOrientation();
     scroll.scrollTo(0);
     setMovieDetails([]);
     fetch(DETAIL_API_URL + id)
