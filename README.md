@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+# Rate a Movie
+This page was created to simulate rating movies by it's users. You can find the movie you just have watched and give it appropriate number of stars.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Visit the site here: https://rateamovie-ump.herokuapp.com
 
-## Available Scripts
+## How does the app work?
+Using the app is simple: you just type a movie title and click "Search" button (or press Enter on your keyboard). After that the page fetches data from API and shows ten movies, which titles are consistent with the typed one.
+### Sort
+You can make finding your movie even easier by sorting the list by title or year of production (both ascending or descending).
+### Rating
+It is possible to rate a movie from a main page view. Just click on the "Rate it" button and choose how many stars you want to give, and then click "Send". Please remember, that this site is only a simulation, created for recruitment purposes. Your rate will not be stored in any database (at least for now). 
+### Movie details
+There is not a lot of information about the movie on the main page. To see more details about it, you can simply click "See details" button, and you will find out a lot of stuff like director, writers, actors etc. You can also read a summary of the movie's plot or see the movie's rating from other websites like Rotten Tomatoes or IMDb. There is also a possibility to rate the movie yourself from the details page view.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technical information
+The page was created by using React (Create React App environment) and SCSS. All the information about movies is fetched from OMDb API (visit it here:  http://www.omdbapi.com).
