@@ -30,7 +30,7 @@ const Details = () => {
   } = movieDetails;
 
   const checkOrientation = () => {
-    if (window.matchMedia("(orientation:landscape)").matches) {
+    if (window.matchMedia("(orientation:portrait)").matches) {
       setIsPortrait(true);
     } else {
       setIsPortrait(false);
