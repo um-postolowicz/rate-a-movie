@@ -14,3 +14,6 @@ There is not a lot of information about the movie on the main page. To see more 
 
 ## Technical information
 The page was created by using React (Create React App environment) and SCSS. All the information about movies is fetched from OMDb API (visit it here:  http://www.omdbapi.com).
+
+## Future development:
+Add a connection with a database to store user's rates and display medium rate based on stored ones.
