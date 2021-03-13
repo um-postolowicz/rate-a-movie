@@ -27,3 +27,4 @@ yarn-error.log*
 api key.txt
 theory.txt
 notes movies.txt
+.env

@@ -10,12 +10,12 @@ const Header = () => {
             <span>
               Have you just watched an amazing movie and want to share that
               delight with other people?
-            </span>{" "}
+            </span>
             <span>
               Or the movie was a disaster and you want to save others from that
               nightmare?
-            </span>{" "}
-            <span>You are in the right place!</span>{" "}
+            </span>
+            <span>You are in the right place!</span>
             <span>
               Find a movie by typing it's title below and feel free to rate it!
             </span>
