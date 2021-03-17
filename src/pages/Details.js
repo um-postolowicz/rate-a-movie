@@ -5,8 +5,7 @@ import noPoster from "../images/no-poster.svg";
 import Rate from "../components/Rate";
 import ButtonDetails from "../components/ButtonDetails";
 
-// const API_KEY = process.env.REACT_APP_API_KEY;
-const API_KEY = " 2fc6065a";
+const API_KEY = process.env.REACT_APP_API_KEY;
 const DETAIL_API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&i=`;
 
 const Details = () => {
