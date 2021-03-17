@@ -7,7 +7,9 @@ import Movie from "../components/Movie";
 import Search from "../components/Search";
 import SearchBar from "../components/SearchBar";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+// const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = " 2fc6065a";
+
 const BASE_API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&page=1&s=`;
 
 const MoviesList = () => {
